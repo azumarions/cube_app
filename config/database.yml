@@ -4,8 +4,9 @@ development:
   reconnect: false
   database: cube_app_development
   pool: 5
-  username: <%= ENV['DATABASE_USERNAME'] %>
-  password: <%= ENV['DATABASE_PASSWORD'] %>
+  username: azuma
+  password: azuma1224
+  socket: /tmp/mysql.sock
   host: localhost
 
 test:
@@ -14,8 +15,9 @@ test:
   reconnect: false
   database: cube_app_test
   pool: 5
-  username: <%= ENV['DATABASE_USERNAME'] %>
-  password: <%= ENV['DATABASE_PASSWORD'] %>
+  username: azuma
+  password: azuma1224
+  socket: /tmp/mysql.sock
   host: localhost
 
 production:
@@ -24,6 +26,7 @@ production:
   reconnect: false
   database: cube_app_production
   pool: 5
-  username: <%= ENV['DATABASE_USERNAME'] %>
-  password: <%= ENV['DATABASE_PASSWORD'] %>
+  username: azuma
+  password: azuma1224
+  socket: /tmp/mysql.sock
   host: localhost
