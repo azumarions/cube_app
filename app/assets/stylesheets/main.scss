@@ -1,0 +1,73 @@
+@import "bootstrap";
+
+$cube-light-white: #f5f5f6;
+$cube-dark-white: #cdced1;
+$cube-black: #050c17;
+$cube-red: #b1046b;
+$cube-violet: #640c41;
+$cube-yellow: #bdb319;
+$cube-blue: #0071bc;
+$cube-dark-blue: #0c2e64;
+
+
+body {
+    background-color: $cube-black!important;
+    padding-top: 3rem;
+}
+
+p {
+    color: $cube-light-white;
+}
+  
+
+.navbar-extend {
+    background-color: black;
+}
+
+// button
+.btn-extend {
+    width: 8.5rem;
+}
+
+.form-submit {
+    width: 100%;
+    margin-top: 1rem;
+}
+
+// login
+.form-logo-img {
+    text-align: center;
+}
+
+.form-title {
+    text-align: center;
+    font-weight: normal;
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    color: $cube-light-white;
+}
+  
+.form-go-to-signup-or-login {
+    color: $cube-light-white;
+}
+  
+.form-go-to-signup-or-login a {
+    color: $cube-yellow;
+}
+  
+// signup 
+.signup-logo-img {
+    text-align: center;
+}
+  
+.signup-title {
+    text-align: center;
+    font-weight: normal;
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    color: $cube-light-white;
+}
+  
+.form-control {
+    margin-bottom: 0;
+}

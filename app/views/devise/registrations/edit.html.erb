@@ -5,12 +5,12 @@
 
   <div class="field">
     <%= f.label :username %><br />
-    <%= f.text_field :username %>
+    <%= f.text_field :username, autofocus: true, autocomplete: "name" %>
   </div>
 
   <div class="field">
     <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <%= f.email_field :email %>
   </div>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
@@ -37,7 +37,7 @@
   </div>
 
   <div class="actions">
-    <%= f.submit "Update" %>
+    <%= f.submit "Update", class: "btn btn-info btn-lg form-submit" %>
   </div>
 <% end %>
 
