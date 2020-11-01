@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   resource :account, :only => [:show] do
     resource :name, :only => [:edit, :update], module: "accounts"
     resource :avatar, :only => [:edit, :update], module: "accounts"
+    resource :description, :only => [:edit, :update], module: "accounts"
   end
 
   # devise_for :users

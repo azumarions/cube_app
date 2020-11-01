@@ -1,0 +1,20 @@
+<div class="edit-description">
+<div class="card-deck">
+  <div class="col-md-6">
+    <section class="card border-light">
+      <h2 class="card-header border-light form-title">メッセージ変更</h2>
+        <div class="card-body">
+          <%= form_with(model: @profile, url: account_description_path, method: :put, local: true) do |form| %>
+            <div class="form-group">
+              <%= form.text_area :description, autofocus: true, class: 'form-control' %>
+            </div>
+            <div class="edit-form">
+              <%= link_to 'キャンセル' , account_path, :class => "btn btn-light" %>
+              <%= form.submit "メッセージ変更する", :class => "btn btn-primary" %>
+            </div>
+          <% end %>
+        </div>   
+    </section>     
+  </div>
+</div>
+</div>

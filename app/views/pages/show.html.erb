@@ -6,7 +6,12 @@
           <%= image_tag current_user.profile.avatar.to_s, :class => "float-center border mb-2 mx-auto" %>
         </div>
         <h1><%= current_user.username %></h1>
-        <p>ステータスメッセージ</p>
+
+        <% if @profile.description? %>
+          <p><%= @profile.description %></p>
+        <% end %>     
+
+     
       </section>
       <section class="stats">
         <p>フォロー<p>
