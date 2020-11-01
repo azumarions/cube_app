@@ -1,0 +1,49 @@
+<div class="card-deck">
+  <div class="col-md-6">
+    <section class="card border-light">
+      <h2 class="card-header border-light form-title">プロフィール画像変更</h2>
+        <div class="card-body">
+          <%= form_with(model: @profile, url: account_avatar_path, method: :put, local: true) do |form| %>
+            <div class="edit-avatar">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="circle-avatar">
+                    <%= image_tag @profile.avatar.to_s, :id => "avatar-prev" %>
+                      <% if @profile.avatar? %>
+                        <label><%= form.check_box :remove_avatar %> 画像を削除する</label>
+                      <% else %>
+                        <%= form.hidden_field :avatar_cache %>
+                      <% end %>
+                  </div>
+                </div>    
+              </div>
+              <div class="col-md-6">
+                <%= form.file_field :avatar, :id => "avatar-img", :class => "form-control-file" %>        
+              </div>    
+              <div class="edit-form">
+                <%= link_to 'キャンセル' , account_path, :class => "btn btn-light" %>
+                <%= form.submit "画像を変更する", :class => "btn btn-primary" %>
+              </div>
+            </div>
+          <% end %>
+        </div>   
+    </section>     
+  </div>
+</div>
+
+<script type="text/javascript">
+$(function() {
+ function readURL(input) {
+   if (input.files && input.files[0]) {
+     var reader = new FileReader();
+     reader.onload = function (e) {
+       $('#avatar-prev').attr('src', e.target.result);
+     }
+     reader.readAsDataURL(input.files[0]);
+   }
+ }
+ $("#avatar-img").change(function(){
+   readURL(this);
+ });
+});
+</script>

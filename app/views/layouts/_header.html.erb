@@ -11,7 +11,7 @@
         <ul class="nav navbar-nav navbar-nav-extend ml-auto">
           <% if user_signed_in? %>
             <li class="nav-item nav-item-extend"><strong><%= link_to current_user.username, pages_show_path %></strong></li>
-            <li class="nav-item nav-item-extend"><%= link_to '編集', edit_user_registration_path %></li>
+            <li class="nav-item nav-item-extend"><%= link_to '編集', account_path %></li>
             <li class="nav-item nav-item-extend"><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
           <% else %>
             <li class="nav-item nav-item-extend"><%= link_to 'サインアップ', new_user_registration_path %></li>

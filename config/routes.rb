@@ -1,6 +1,17 @@
 Rails.application.routes.draw do
-  devise_for :users
-  root 'pages#index'
+  resource :account, :only => [:show] do
+    resource :name, :only => [:edit, :update], module: "accounts"
+    resource :avatar, :only => [:edit, :update], module: "accounts"
+  end
+
+  # devise_for :users
+  devise_for :users, controllers: {
+    sessions:      'users/sessions',
+    passwords:     'users/passwords',
+    registrations: 'users/registrations'
+  }
+
+  root 'pages#home'
   get 'pages/show'
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  get 'pages/index'
 end

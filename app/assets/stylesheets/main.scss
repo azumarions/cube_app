@@ -12,7 +12,11 @@ $cube-dark-blue: #0c2e64;
 
 body {
     background-color: $cube-black!important;
-    padding-top: 3rem;
+    padding-top: 1rem;
+}
+
+h1 {
+    color:  $cube-light-white;
 }
 
 p {
@@ -70,4 +74,59 @@ p {
   
 .form-control {
     margin-bottom: 0;
+}
+
+//edit
+.circle-avatar img {
+    width: 11rem;
+    height: 11rem;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.user_info {
+    text-align: center;
+}
+
+
+.user_info h1 {
+    color: $cube-light-white;
+}
+
+
+.card {
+    background-color: $cube-black!important;
+    color: $cube-light-white;
+}
+
+.edit-avatar {
+    text-align: center;
+}
+
+.edit-form {
+    margin-top: 2rem;
+}
+
+.edit-index {
+    text-align: center;
+}
+
+.edit-index-title {
+    margin-bottom: 3rem;
+    padding: 1rem;
+}
+
+.edit-index a {
+    color: $cube-light-white;
+}
+
+.edit-group a {
+    border: 0.1rem solid $cube-dark-white;
+    font-size: 1.5rem;
+    padding: 1.5rem;
+    margin-top: 0.5rem;
+}
+
+.list-group-item {
+    background-color: $cube-black!important;
 }

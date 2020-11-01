@@ -5,6 +5,8 @@ ruby '2.7.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.4'
+gem 'mini_magick'
+gem 'carrierwave'
 gem 'dotenv-rails'
 gem 'jquery-rails'
 gem 'bootstrap'
