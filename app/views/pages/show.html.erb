@@ -5,7 +5,7 @@
         <div class="circle-avatar">
           <%= image_tag current_user.profile.avatar.to_s, :class => "float-center border mb-2 mx-auto" %>
         </div>
-        <h1><%= current_user.username %></h1>
+        <h3><%= current_user.username %></h3>
 
         <% if current_user.profile.description? %>
           <p><%= current_user.profile.description %></p>
@@ -19,7 +19,7 @@
     </div>
     <div class="col-md-6">
       <div class="micropost-page">
-        <h1>投稿一覧</h1>       
+        <h3>投稿一覧</h3>       
       </div>
     </div>
   </div>

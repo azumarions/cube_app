@@ -20,6 +20,10 @@ h1 {
     color:  $cube-light-white;
 }
 
+h3 {
+    color:  $cube-light-white;
+}
+
 p {
     color: $cube-light-white;
 }
@@ -100,8 +104,8 @@ p {
 
 //edit
 .circle-avatar img {
-    width: 11rem;
-    height: 11rem;
+    width: 8rem;
+    height: 8rem;
     border-radius: 50%;
     object-fit: cover;
 }
@@ -111,7 +115,7 @@ p {
 }
 
 
-.user_info h1 {
+.user_info h3 {
     color: $cube-light-white;
 }
 

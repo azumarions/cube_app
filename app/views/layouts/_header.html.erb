@@ -10,7 +10,7 @@
         <% if user_signed_in? %>
           <li><strong><%= link_to current_user.username, pages_show_path, class: "drawer-menu-item" %></strong></li>
           <li><%= link_to '攻略', "#", class: "drawer-menu-item" %></li>
-          <li><%= link_to 'ユーザー', "#", class: "drawer-menu-item" %></li>
+          <li><%= link_to 'ユーザー', pages_index_path, class: "drawer-menu-item" %></li>
           <li><%= link_to 'ランキング', "#", class: "drawer-menu-item" %></li>
           <li><%= link_to '編集', "#", class: "drawer-menu-item" %></li>
           <li><%= link_to '計測履歴', "#", class: "drawer-menu-item" %></li>         
