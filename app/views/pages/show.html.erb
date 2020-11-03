@@ -7,8 +7,8 @@
         </div>
         <h1><%= current_user.username %></h1>
 
-        <% if @profile.description? %>
-          <p><%= @profile.description %></p>
+        <% if current_user.profile.description? %>
+          <p><%= current_user.profile.description %></p>
         <% end %>     
 
      

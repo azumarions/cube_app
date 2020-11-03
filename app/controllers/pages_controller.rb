@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
   before_action :sign_in_required, only: [:show]
-  before_action :set_profile
+  # before_action :set_profile
 
   def home
   end
@@ -12,7 +12,7 @@ class PagesController < ApplicationController
   end
 
   private
-    def set_profile
-        @profile = current_user.profile
-    end
+    # def set_profile
+    #    @profile = current_user.profile
+    # end
 end

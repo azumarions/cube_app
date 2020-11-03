@@ -12,7 +12,8 @@ $cube-dark-blue: #0c2e64;
 
 body {
     background-color: $cube-black!important;
-    padding-top: 1rem;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
 }
 
 h1 {
@@ -24,7 +25,28 @@ p {
 }
   
 
+.drawer-nav {
+    background-color: black!important;
+}
+
+.drawer-hamburger-icon, .drawer-hamburger-icon:after, .drawer-hamburger-icon:before {
+    background-color: $cube-light-white!important;
+}
+
+.drawer-menu a {
+    color: $cube-light-white;
+}
+
+
+
+#logo {
+    font-size: 2rem;
+}
+
 .navbar-extend {
+    height: 4rem;
+    padding-bottom: 2rem;
+    border-bottom: 0.1rem solid $cube-light-white;
     background-color: black;
 }
 
@@ -47,7 +69,7 @@ p {
     text-align: center;
     font-weight: normal;
     font-size: 1.5rem;
-    margin-bottom: 2rem;
+   margin-bottom: 2rem;
     color: $cube-light-white;
 }
   
@@ -132,5 +154,9 @@ p {
 }
 
 .edit-description {
+    text-align: center;
+}
+
+.home {
     text-align: center;
 }
