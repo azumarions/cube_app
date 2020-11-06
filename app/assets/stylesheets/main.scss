@@ -56,7 +56,12 @@ p {
 
 // button
 .btn-extend {
-    width: 8.5rem;
+    width: 5rem;
+}
+
+.btn-danger{
+    padding: 1px!important;
+    margin-bottom: 0.5rem;
 }
 
 .form-submit {
@@ -104,6 +109,7 @@ p {
 
 //edit
 .circle-avatar img {
+    margin-bottom: 1rem;
     width: 8rem;
     height: 8rem;
     border-radius: 50%;
@@ -123,10 +129,6 @@ p {
 .card {
     background-color: $cube-black!important;
     color: $cube-light-white;
-}
-
-.edit-avatar {
-    text-align: center;
 }
 
 .edit-form {
@@ -163,4 +165,13 @@ p {
 
 .home {
     text-align: center;
+}
+
+.card-deck {
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.custom-file-label {
+    text-align: left;
 }

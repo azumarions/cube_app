@@ -5,7 +5,6 @@ Rails.application.routes.draw do
     resource :description, :only => [:edit, :update], module: "accounts"
   end
 
-  # devise_for :users
   devise_for :users, controllers: {
     sessions:      'users/sessions',
     passwords:     'users/passwords',
@@ -15,4 +14,14 @@ Rails.application.routes.draw do
   root 'pages#home'
   get 'pages/show'
   get 'pages/index'
+  get 'users/show'
+  get 'users/index'
+  get 'microposts/show'
+  get 'microposts/index'
+  post 'microposts/new'
+
+
+  resources :pages
+  resources :microposts
+  resources :users
 end

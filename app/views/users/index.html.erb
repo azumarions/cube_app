@@ -1,0 +1,18 @@
+<div class="input-group">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="basic-addon1"><i class="fab fa-searchengin"></i></span>
+  </div>
+  <input type="text" class="form-control" placeholder="ユーザー名" aria-label="ユーザー名" aria-describedby="basic-addon1">
+</div>
+<ul class="users">
+  <% @users.each do |user| %>
+    <li>
+      <div class="users-avatar">
+        <%= image_tag user.profile.avatar.to_s, :class => "float-center border mb-2 mx-auto" %>     
+        <%= link_to user.username, user, class: "users-name text-white" %>
+      </div>
+    </li>
+  <% end %>
+</ul>
+
+<%= paginate @users %>

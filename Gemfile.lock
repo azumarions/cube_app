@@ -273,6 +273,7 @@ DEPENDENCIES
   devise-i18n-views
   dotenv-rails
   faker
+  image_processing
   jbuilder (~> 2.7)
   jquery-rails
   kaminari

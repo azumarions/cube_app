@@ -94,3 +94,29 @@
 .input-group {
     margin-bottom: 2rem;
 }
+
+// microposts index
+
+.microposts-index {
+    position: relative;
+}
+
+.media {
+    border-bottom: 0.1rem solid white;
+}
+
+.media img {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.microposts-icon {
+    position: fixed;
+}
+
+
+#comment {
+    height: 15rem;
+}

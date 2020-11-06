@@ -1,0 +1,23 @@
+<div class="card-deck">
+  <div class="col">
+    <section class="card border-light">
+      <h2 class="card-header border-light form-title">新規投稿</h2>
+        <div class="card-body">
+          <%= form_with(model: @micropost, url: microposts_path, local: true) do |f| %>
+            <div class="form-group">
+              <%= f.text_area :comment, autofocus: true, class: 'form-control' %>
+            </div>
+            <div class="custom-file">
+              <%= f.file_field :picture, class: 'custom-file-input' %>
+              <label class="custom-file-label" for="customFile">ファイルを選択...</label>
+            </div>
+            <div class="edit-form">
+              <%= link_to 'キャンセル' , microposts_path, class: "btn btn-light" %>
+              <%= f.submit "投稿する", class: "btn btn-info" %>
+            </div>
+          <% end %>
+        </div>   
+    </section>     
+  </div>
+</div>
+  
