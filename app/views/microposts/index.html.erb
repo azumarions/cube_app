@@ -1,15 +1,8 @@
 <div class"microposts-index">
-  <div class="row justify-content-end ">
-    <div class="microposts-icon">
-      <div class="col">
-        <%= link_to "", new_micropost_path, class: "fas fa-pen fa-3x fa-border faa-pulse animated my-white" %>
-      </div>
-    </div>
-  </div>
   <% if @microposts.any? %>
     <ul class="list-unstyled">
       <% @microposts.each do |micropost| %>
-        <li class="media mb-4">
+        <li id="micropost-<%= micropost.id %>" data-micropost-id="<%= micropost.id %>" class="media mb-4">
           　<%= image_tag micropost.user.profile.avatar.to_s, :id => "align-self-center" %>
           <div class="media-body">   
           　<h5><%= link_to micropost.user.username, micropost.user, class: "users-name text-white" %></h5>
@@ -19,9 +12,10 @@
               <%= image_tag micropost.resize_picture %>
               </div>
             <% end %>
+            <%= render "likes/like", micropost: micropost %>
           　<% if current_user?(micropost.user) %>
           　　<%= link_to "削除", micropost, method: :delete,
-                                          data: { confirm: "削除しますか？" }, :class => "btn btn-danger btn-extend" %>
+                                          data: { confirm: "削除しますか？" }, :class => "btn btn-sm btn-danger" %>
           　<% end %>
           </div>
         </li>

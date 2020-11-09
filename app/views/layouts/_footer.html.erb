@@ -1,17 +1,22 @@
 <div class="footer-menu">
   <div class="container">
     <footer class="navbar navbar-dark fixed-bottom navbar-extend">   
-      <div class="col-4">
+      <div class="col-3">
         <div class="footer-icon">
           <%= link_to " ", root_path, class: "fas fa-home fa-2x my-white" %>
         </div>
       </div>
-      <div class="col-4">
+      <div class="col-3">
         <div class="footer-icon">
-          <i class="far fa-comments fa-2x my-white"></i>
+          <%= link_to " ", microposts_path, class: "far fa-comments fa-2x my-white" %>
         </div>
       </div>
-      <div class="col-4">
+      <div class="col-3">
+        <div class="footer-icon">
+          <%= link_to "", new_micropost_path, class: "fas fa-pen fa-2x my-white" %>
+        </div>
+      </div>
+      <div class="col-3">
         <div class="footer-icon">
           <i class="far fa-clock fa-2x my-white"></i>
         </div>

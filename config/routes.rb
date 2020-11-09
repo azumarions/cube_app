@@ -19,6 +19,8 @@ Rails.application.routes.draw do
   get 'microposts/show'
   get 'microposts/index'
   post 'microposts/new'
+  get 'likes/create'
+  get 'likes/destroy'
   resources :users do
     member do
       get :following, :followers
@@ -28,5 +30,6 @@ Rails.application.routes.draw do
   resources :pages
   resources :microposts
   resources :users
-  resources :relationships,       only: [:create, :destroy]
+  resources :relationships,   only: [:create, :destroy]
+  resources :likes,   only: [:create, :destroy]
 end
