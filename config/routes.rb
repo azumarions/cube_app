@@ -19,9 +19,14 @@ Rails.application.routes.draw do
   get 'microposts/show'
   get 'microposts/index'
   post 'microposts/new'
-
+  resources :users do
+    member do
+      get :following, :followers
+    end
+  end
 
   resources :pages
   resources :microposts
   resources :users
+  resources :relationships,       only: [:create, :destroy]
 end
