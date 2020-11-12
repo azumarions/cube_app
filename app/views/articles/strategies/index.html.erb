@@ -1,0 +1,22 @@
+<div class="articles-index">
+  <div class="input-group">
+    <div class="input-group-prepend">
+        <span class="input-group-text" id="basic-addon1"><i class="fab fa-searchengin"></i></span>
+    </div>
+    <input type="text" class="form-control" placeholder="検索" aria-label="検索" aria-describedby="basic-addon1">
+  </div>
+  <% if @articles.any? %>
+    <ul class="article">
+      <% @articles.each do |article| %>
+        <div class="card">
+          <div class="card-body">      
+            <li class="card-text"><%= link_to article.title, article_strategy_path(id: article), class: "text-white" %></li>
+          </div>   
+        </div>               　        
+      <% end %>   　
+    </ul>
+  <%= paginate @articles %>
+  <% else %>
+    <span>まだ投稿がありません</span>
+  <% end %>
+</div>

@@ -5,6 +5,10 @@ Rails.application.routes.draw do
     resource :description, :only => [:edit, :update], module: "accounts"
   end
 
+  resource :article, :only => [:show] do
+    resources :strategies, module: "articles"
+  end
+
   devise_for :users, controllers: {
     sessions:      'users/sessions',
     passwords:     'users/passwords',
@@ -21,6 +25,7 @@ Rails.application.routes.draw do
   post 'microposts/new'
   get 'likes/create'
   get 'likes/destroy'
+  get 'articles/index'
   resources :users do
     member do
       get :following, :followers

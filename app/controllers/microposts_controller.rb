@@ -28,7 +28,7 @@ class MicropostsController < ApplicationController
   end
 
   private
-
+  
     def micropost_params
       params.permit(:comment, :picture)
     end

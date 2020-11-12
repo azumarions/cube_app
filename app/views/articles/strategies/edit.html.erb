@@ -1,0 +1,27 @@
+<div class="card-deck">
+  <div class="col">
+    <section class="card border-light">
+      <h2 class="card-header border-light form-title">記事編集</h2>
+        <div class="card-body">
+          <%= form_with(model: @article, url: article_strategy_path, method: :put, local: true) do |f| %>
+            <div class="form-group">
+              <%= f.text_area :title, autofocus: true, class: 'form-control article-title', placeholder: "@article.title" %>
+            </div>
+            <div class="form-group">
+              <%= f.text_area :content, class: 'form-control article-content', placeholder: "@article.content" %>
+            </div>
+            <div class="custom-file">
+              <%= f.file_field :picture, class: 'custom-file-input' %>
+              <label class="custom-file-label" for="customFile">ファイルを選択...</label>
+            </div>
+            <div class="edit-form">
+              <%= link_to 'キャンセル' , article_strategies_path, class: "btn btn-light" %> 
+              <%= link_to "削除", article_strategy_path, method: :delete,
+                                          data: { confirm: "削除しますか？" }, :class => "btn btn-danger" %>
+              <%= f.submit "投稿する", class: "btn btn-info" %> 
+            </div>        
+          <% end %>
+        </div>   
+    </section>     
+  </div>
+</div>

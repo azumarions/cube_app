@@ -1,0 +1,13 @@
+<div class="card-deck">
+  <div class="col">
+    <section class="card border-light">
+      <h2 class="card-header border-light form-title"><%= @article.title %></h2>
+        <div class="card-body">
+          <%= @article.content %>
+          <div class="edit-form">
+            <%= link_to 'スターを獲得して終了する' , article_strategies_path, class: "btn btn-warning" %> 
+          </div>
+        </div>   
+    </section>     
+  </div>
+</div>

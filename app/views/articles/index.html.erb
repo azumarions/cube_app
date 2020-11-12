@@ -1,0 +1,20 @@
+<div class="articles-index">
+  <div class="input-group">
+    <div class="input-group-prepend">
+      <span class="input-group-text" id="basic-addon1"><i class="fab fa-searchengin"></i></span>
+    </div>
+    <input type="text" class="form-control" placeholder="検索" aria-label="検索" aria-describedby="basic-addon1">
+  </div>
+　<% if @feed_items.any? %>
+    <ul class="article">
+      <% @feed_items.each do |feed_item| %>
+        <div class="card">
+          <div class="card-body">      
+            <li class="card-text"><%= link_to feed_item.title, edit_article_strategy_path(id: feed_item), class: "text-white" %></li>
+          </div>   
+        </div>   　        
+      <% end %>   　
+    </ul> 
+  <%= paginate @feed_items, params: { controller: :pages, action: :index } %>
+  <% end %>
+</div>

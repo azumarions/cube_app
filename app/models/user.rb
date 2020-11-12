@@ -4,6 +4,7 @@ class User < ApplicationRecord
          :confirmable, :lockable, :timeoutable, :trackable
 
   has_one :profile
+  has_many :articles, dependent: :destroy
   has_many :microposts, dependent: :destroy
   has_many :likes, dependent: :destroy
   has_many :active_relationships, class_name:  "Relationship",
@@ -15,6 +16,10 @@ class User < ApplicationRecord
   has_many :following, through: :active_relationships, source: :followed
   has_many :followers, through: :passive_relationships, source: :follower
   
+  def feed
+    Article.where("user_id = ?", id)
+  end
+
   # ユーザーをフォローする
   def follow(other_user)
     following << other_user
