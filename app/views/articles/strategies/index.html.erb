@@ -9,9 +9,12 @@
     <ul class="article">
       <% @articles.each do |article| %>
         <div class="card">
-          <div class="card-body">      
+          <div class="card-body">
+          <div id="article-<%= article.id %>" data-article-id="<%= article.id %>">      
             <li class="card-text"><%= link_to article.title, article_strategy_path(id: article), class: "text-white" %></li>
-          </div>   
+            <%= render "stars/star", article: article %>
+          </div> 
+          </div>  
         </div>               　        
       <% end %>   　
     </ul>

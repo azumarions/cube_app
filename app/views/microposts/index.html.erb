@@ -2,7 +2,8 @@
   <% if @microposts.any? %>
     <ul class="list-unstyled">
       <% @microposts.each do |micropost| %>
-        <li id="micropost-<%= micropost.id %>" data-micropost-id="<%= micropost.id %>" class="media mb-4">
+        <div class="media mb-4">
+        <li id="micropost-<%= micropost.id %>" data-micropost-id="<%= micropost.id %>">    
           　<%= image_tag micropost.user.profile.avatar.to_s, :id => "align-self-center" %>
           <div class="media-body">   
           　<h5><%= link_to micropost.user.username, micropost.user, class: "users-name text-white" %></h5>
@@ -17,8 +18,9 @@
           　　<%= link_to "削除", micropost, method: :delete,
                                           data: { confirm: "削除しますか？" }, :class => "btn btn-sm btn-danger" %>
           　<% end %>
-          </div>
+          </div>     
         </li>
+        </div>
       <% end %>
     </ul>
   <%= paginate @microposts %>
