@@ -15,7 +15,13 @@
         <%= render 'shared/stats' %>
       </section>  
       <div class="micropost-page">
-        <h3>投稿一覧</h3>       
+        <h3>投稿一覧</h3>    
+        <% if @micropost_feed_items.any? %>
+        <div class="microposts">
+          <%= render @micropost_feed_items %>
+        </div>
+        <%= paginate @micropost_feed_items, params: { controller: :users, action: :show } %>
+      <% end %>    
       </div>
     </div>
   </div>

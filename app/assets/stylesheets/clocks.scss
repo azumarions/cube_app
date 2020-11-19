@@ -1,0 +1,116 @@
+// Place all the styles related to the Clocks controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+.btn-clock {
+    text-align: right!important;
+}
+
+.wrap {
+    position: relative;
+    background-color: #050c17;
+    text-align: center;
+}
+
+.air {
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    height: 230px;
+    opacity: 0.1;
+    background-color: #050c17
+}
+
+#clock {
+    border: #0ab1bd solid 5px;
+    border-radius: 50%;
+    line-height: 210px;
+    font-size: 32px;
+    width: 230px;
+    height: 230px;
+    text-align: center;
+    color: white;
+    background-color: #050c17
+}
+
+.btn-sb {
+    margin-top: 25px;
+    border-radius: 50px!important;
+    padding: 10px 30px!important;
+    border-color: #050c17!important;
+    background: linear-gradient(45deg,  #104966, #06b8c5);
+}
+
+#span {
+    color: white;
+}
+
+.option {
+    margin-top: 30px;
+}
+.option a {
+    display: inline-block;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+#play,#reset {
+    width: 55px;
+    height: 55px;
+    line-height: 55px;
+    border-radius: 50px;
+    color: white;
+    background: linear-gradient(45deg,  #104966, #06b8c5);
+    transition: all ease 0.1s;
+}
+
+#stop {
+    padding: 15px 25px;
+    border-radius: 50px;
+    color: white;
+    font-weight: 400;
+    background: linear-gradient(45deg, #0d435e, #0ab1bd);
+    transition: all ease 0.1s;
+}
+
+#play:active, #reset:active, #stop:active {
+    transform: scale(0.95);
+}
+
+.fa-play {
+    padding-left: 5px;
+}
+
+.pause .fa-play,
+.fa-pause {
+    display: none!important;
+}
+
+.pause .fa-pause {
+    display: inline-block!important;
+}
+
+#timer svg {
+    position: absolute;
+    left: 0;
+}
+
+#animateCircle.addAnimation{
+    stroke-dasharray: 770;
+    stroke-dashoffset: -770;
+    animation: animatecircle 60s linear infinite;
+    animation-play-state: paused;
+}
+
+@keyframes animateCircle{
+    from{
+        stroke-dashoffset: 0;
+    }
+}
+
+.defaultCircle {
+    opacity: 0.3;
+}
+
+.clock-time {
+    padding: 0!important;
+}

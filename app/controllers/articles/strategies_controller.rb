@@ -2,6 +2,10 @@ class Articles::StrategiesController < ApplicationController
   before_action :authenticate_user!
   before_action :correct_user,   only: :destroy
 
+  def new
+    @article = Article.new
+  end
+
   def create
     @article = current_user.articles.build(article_params)
     if @article.save
@@ -43,7 +47,7 @@ class Articles::StrategiesController < ApplicationController
 
   def destroy
     @article.destroy
-    flash[:success] = "Micropost deleted"
+    flash[:success] = "記事を削除しました"
     redirect_to request.referrer || root_url
   end
 

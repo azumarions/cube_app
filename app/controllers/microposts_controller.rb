@@ -18,7 +18,7 @@ class MicropostsController < ApplicationController
 
   def index
     @microposts = Micropost.all
-    @microposts = Micropost.page(params[:page]).per(5)
+    @microposts = Micropost.page(params[:page]).per(20)
   end
 
   def destroy

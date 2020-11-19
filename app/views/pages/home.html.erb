@@ -1,54 +1,70 @@
+<% if logged_in? %>
 <div class="home">
   <div class="container">
     <div class="row">
-      <div class="col-6">
+      <div class="col-6 col-md-3">
         <div class="home-icon">
-          <i class="fas fa-user fa-4x faa-pulse animated my-blue"></i>
+          <%= link_to '', pages_show_path, class: "fas fa-user fa-4x faa-pulse animated my-yellow" %>
           <p>プロフィール</p>
         </div>
       </div>
-      <div class="col-6">
+       <div class="col-6 col-md-3">
         <div class="home-icon">
-          <i class="fas fa-book fa-4x faa-pulse animated my-green"></i>
-          <p>攻略</p>
-        </div>
-      </div>
-      <div class="col-6">
-        <div class="home-icon">
-          <i class="fas fa-users fa-4x faa-pulse animated my-red"></i>
-          <p>ユーザー</p>
-        </div>
-      </div>
-      <div class="col-6">
-        <div class="home-icon">
-          <i class="fas fa-crown fa-4x faa-pulse animated my-yellow"></i>
+          <%= link_to '', clocks_rank_path, class: "fas fa-crown fa-4x faa-pulse animated my-darkgoldenrod" %>
           <p>ランキング</p>
         </div>
       </div>
-      <div class="col-6">
+      <div class="col-6 col-md-3">
         <div class="home-icon">
-          <i class="fas fa-user-edit fa-4x faa-pulse animated my-gray"></i>
-          <p>設定</p>
+          <%= link_to '', users_index_path, class: "fas fa-users fa-4x faa-pulse animated my-red" %>
+          <p>ユーザー</p>
         </div>
       </div>
-      <div class="col-6">
+       <div class="col-6 col-md-3">
         <div class="home-icon">
-          <i class="fas fa-pen fa-4x faa-pulse animated my-orange"></i>
-          <p>編集</p>
+          <%= link_to '', article_path, class: "fas fa-book fa-4x faa-pulse animated my-orange" %>
+          <p>攻略</p>
+        </div>
+      </div> 
+      <div class="col-6 col-md-3">
+        <div class="home-icon">
+          <%= link_to '', microposts_path, class: "far fa-comments fa-4x faa-pulse animated my-green" %>
+          <p>チャット</p>
         </div>
       </div>
-      <div class="col-6">
+      <div class="col-6 col-md-3">
         <div class="home-icon">
-         <i class="fas fa-hourglass-start fa-4x faa-pulse animated my-cyan"></i>
+          <%= link_to '', new_micropost_path, class: "fas fa-pen fa-4x faa-pulse animated my-mediumseagreen" %>
+          <p>投稿</p>
+        </div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="home-icon">
+         <%= link_to '', new_clock_path, class: "far fa-clock fa-4x faa-pulse animated my-blue" %>
+         <p>タイマー</p>
+        </div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="home-icon">
+         <%= link_to '', clocks_path, class: "fas fa-hourglass-start fa-4x faa-pulse animated my-cyan" %> 
          <p>計測履歴</p>
         </div>
       </div>
-      <div class="col-6">
+      <div class="col-6 col-md-3">
         <div class="home-icon">
-          <i class="fas fa-home fa-4x my-pink faa-pulse animated"></i>
-          <p>ホーム</p>
+          <li><%= link_to '', articles_index_path, class: "fas fa-check fa-4x faa-pulse animated my-white" %></li>
+          <p>編集</p>
+        </div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="home-icon">
+          <%= link_to '', account_path, class: "fas fa-user-edit fa-4x faa-pulse animated my-gray" %>
+          <p>設定</p>
         </div>
       </div>
     </div>
   </div>
 </div>
+<% else %>
+  <h2 class="text-white">home</h2>
+<% end %>

@@ -1,0 +1,116 @@
+<div class="wrap">
+  <div class="air">
+  </div>
+  <%= form_with(model: @clock, url: clocks_path, local: true) do |f| %>
+    <%= f.text_area :hour, id: "clock", value: @initial_value %>
+
+    <div class="option">
+      <a id="play" onclick="playFunc();" href="javascript:void(0)"><i class="fa fa-play"></i>
+      <i class="fa fa-pause"></i></a>
+      <a id="stop" onclick="stopFunc();" href="javascript:void(0)"><i class="fa fa-stop"></i>stop</a>
+      <a id="reset" onclick="resetFunc();" href="javascript:void(0)"><i class="fa fa-undo"></i></a>
+    </div>
+    <%= f.submit "タイムを記録する", class: "btn btn-info btn-sb" %>
+  <% end %> 
+</div>
+
+<script>
+
+var base;
+var playPause = 0;
+
+function playFunc(){
+
+    playPause = playPause + 1;
+
+    if(playPause === 1){
+        play();
+        document.getElementById("play").classList.add("pause");
+        $("#animateCircle").addClass("addAnimation");
+        $("#animateCircle.addAnimation").css("animation-play-state", "running");
+    } else if (playPause === 2){
+        document.getElementById("play").classList.remove("pause");
+        $("#animateCircle").css("animation-play-state", "paused");
+        playPause = 0;
+        stop();
+    }
+}
+
+function play(){
+    base = setInterval(timer, 10);
+}
+
+function stop(){
+    clearInterval(base);
+}
+
+var millisecond = 0;
+var second = 0;
+var minute = 0;
+var hour = 0;
+
+var millisecondVal = 0;
+var secondVal = 0;
+var minuteVal = 0;
+var hourVal = 0;
+
+function timer(){
+    millisecondVal = updateTime(millisecond);
+    secondVal = updateTime(second);
+    minuteVal = updateTime(minute);
+    hourVal = updateTime(hour);
+
+    millisecond = ++millisecond;
+
+    if(millisecond === 100){ 
+        millisecond = 0;
+        second = ++second;
+    }
+    if(second == 60){
+        minute = ++minute;
+        second = 0;
+    }
+    if(minute == 60){
+        minute = 0;
+        hour = ++hour;
+    }
+
+    $('#clock').html(hourVal + ':' +  minuteVal + ':' + secondVal + ':' + millisecondVal);
+}
+
+function updateTime(i){
+    if(i < 10){
+        i = "0" + i;
+    }
+    return i;
+}
+
+function resetFunc(){
+
+    millisecond = 0;
+    second = 0;
+    minute = 0;
+    hour = 0;
+
+    $('#clock').html(hour + ':' +  minute + ':' + second + ':' + millisecond);
+
+    if(!$("#play").hasClass("pause")){
+        $("#animateCircle").removeClass("addAnimation");
+    } else {
+        $("#animateCircle").removeClass("addAnimation");
+        setTimeout(function(){
+            $("#animateCircle").addClass("addAnimation");
+        }, 10);
+    }
+}
+
+function stopFunc(){
+    clearInterval(base);
+    resetFunc();
+
+    if($("#play").hasClass("pause")){
+        $("#animateCircle").removeClass("addAnimation");
+    }
+}
+
+</script>

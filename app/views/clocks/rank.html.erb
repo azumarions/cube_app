@@ -1,0 +1,32 @@
+<% if @clocks.any? %>
+  <ul class="article">
+    <% @clocks.each.with_index(1) do |clock, i| %>
+      <div class="card">
+        <div class="card-body">
+          <div id="clock-<%= clock.id %>" data-article-id="<%= clock.id %>">
+            <li class="card-text">
+              <div class="row">              
+                  <h2><%= i %></h2>            
+                <div class="col-4">
+                  <div class="users-avatar">
+                    <%= image_tag clock.user.profile.avatar.to_s %>
+                  </div>
+                </div> 
+                <div class="col-6">
+                  <h5><%= link_to clock.user.username, clock.user, class: "users-name text-white" %></h5>
+                </div> 
+                <div class="col-4">
+                </div>
+                <div class="col-6">
+                  <h5><%= clock.hour %></h5>
+                </div>
+              </div>
+            </li>
+          </div> 
+        </div>  
+      </div>               　        
+    <% end %>   　
+  </ul>
+<% else %>
+  <h1 class="text-white">まだ記録がありません</h1>
+<% end %>

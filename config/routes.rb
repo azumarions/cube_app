@@ -26,6 +26,7 @@ Rails.application.routes.draw do
   get 'likes/create'
   get 'likes/destroy'
   get 'articles/index'
+  get 'clocks/rank'
   resources :users do
     member do
       get :following, :followers
@@ -37,5 +38,6 @@ Rails.application.routes.draw do
   resources :users
   resources :relationships,   only: [:create, :destroy]
   resources :likes,   only: [:create, :destroy]
-  resources :likes, only: [:create, :destroy]
+  resources :stars, only: [:create, :destroy]
+  resources :clocks
 end

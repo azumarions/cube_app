@@ -8,6 +8,7 @@ class User < ApplicationRecord
   has_many :microposts, dependent: :destroy
   has_many :likes, dependent: :destroy
   has_many :stars, dependent: :destroy
+  has_many :clocks, dependent: :destroy
   has_many :active_relationships, class_name:  "Relationship",
                                   foreign_key: "follower_id",
                                   dependent:   :destroy
@@ -19,6 +20,14 @@ class User < ApplicationRecord
   
   def feed
     Article.where("user_id = ?", id)
+  end
+
+  def micropost_feed
+    Micropost.where("user_id = ?", id)
+  end
+
+  def clock_feed
+    Clock.where("user_id = ?", id)
   end
 
   # ユーザーをフォローする

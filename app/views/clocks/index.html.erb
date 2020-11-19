@@ -1,0 +1,29 @@
+<% if @clock_feed_items.any? %>
+  <ul class="article">
+    <% @clock_feed_items.reorder(created_at: :desc).each do |clock_feed_item| %>
+      <div class="card">
+        <div class="card-body">
+          <div id="clock-<%= clock_feed_item.id %>" data-article-id="<%= clock_feed_item.id %>">      
+            <li class="card-text">
+              <div class="row">
+                <div class="col-5">
+                  <%= clock_feed_item.hour %>
+                </div>
+                <div class="col-4 clock-time">
+                  <%= time_ago_in_words(clock_feed_item.created_at) %>前
+                </div>
+                <div class="col-3">
+                  <%= link_to "削除", @clock, method: :delete,  :class => "btn btn-sm btn-danger btn-clock" %>
+                </div>
+              </div>
+            </li>
+          </div> 
+        </div>  
+      </div>               　        
+    <% end %>   　
+  </ul>
+<% else %>
+  <h2 class="text-white">まだ記録がありません</h2>
+<% end %>
+
+  
