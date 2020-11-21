@@ -26,6 +26,7 @@ Rails.application.routes.draw do
   get 'likes/create'
   get 'likes/destroy'
   get 'articles/index'
+  get 'strategies/index'
   get 'clocks/rank'
   resources :users do
     member do

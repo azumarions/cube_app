@@ -1,4 +1,5 @@
 class Articles::StrategiesController < ApplicationController
+  before_action :sign_in_required
   before_action :authenticate_user!
   before_action :correct_user,   only: :destroy
 
