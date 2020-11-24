@@ -5,7 +5,6 @@ module ApplicationHelpers
     end
 
     def log_in_as(user, remember_me = 0)
-      get new_user_session_path
       post user_session_path, params: {
         session: {
           email: user.email,

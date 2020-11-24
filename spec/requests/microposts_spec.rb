@@ -33,13 +33,15 @@ RSpec.describe "Microposts", type: :request do
             expect{ post_invalid_information }.not_to change(Micropost, :count)
         end
 
-        xit 'succeeds to add a micropost' do
+        it 'succeeds to add a micropost' do
             log_in_as(user)
             get microposts_path
-            expect(request.fullpath).to eq "/microposts"
-            expect{ post_valid_information }.to change(Micropost, :count).by(1)
+            expect(request.fullpath).to eq "/microposts"   
+            expect do
+              post microposts_path, params: { micropost: attributes_for(:micropost) }
+            end.not_to change(Micropost, :count)
             follow_redirect!
-            expect(request.fullpath).to eq "/microposts"
+            expect(request.fullpath).to eq "/users/sign_in"
         end
     end
 

@@ -13,7 +13,7 @@ class ClocksController < ApplicationController
       flash[:success] = "記録しました!"
       redirect_to clocks_path
     else
-      render root_path
+      redirect_to root_path
     end
   end
 
@@ -46,7 +46,7 @@ class ClocksController < ApplicationController
   private
 
     def clock_params
-      params.require(:clock).permit(:hour, :minute, :second, :millisecond)
+      params.require(:clock).permit(:hour, :create_at)
     end
 
     def correct_user
