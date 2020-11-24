@@ -7,22 +7,22 @@ class Accounts::NamesController < ApplicationController
 
   def update
     respond_to do |format|
-        if @profile.update(profile_params)
-            format.html {
-                redirect_to account_path,
-                notice: "変更しました"
-            }
-        else
-            format.html {
-                render :edit
-            }
-        end
+      if @profile.update(profile_params)
+          format.html {
+              redirect_to account_path,
+              notice: "変更しました"
+          }
+      else
+          format.html {
+              render :edit
+          }
+      end
     end
-　end
+  end
 
-  private
+    private
     def set_profile
-        @profile = current_user.profile
+       @profile = current_user.profile
     end
 
     def profile_params
