@@ -29,17 +29,17 @@ RSpec.describe "Microposts", type: :request do
 
         it 'does not add a micropost when the form has no information' do
             log_in_as(user)
-            get microposts_index_path
+            get microposts_path
             expect{ post_invalid_information }.not_to change(Micropost, :count)
         end
 
         xit 'succeeds to add a micropost' do
             log_in_as(user)
-            get microposts_index_path
-            expect(request.fullpath).to eq "/microposts/index"
+            get microposts_path
+            expect(request.fullpath).to eq "/microposts"
             expect{ post_valid_information }.to change(Micropost, :count).by(1)
             follow_redirect!
-            expect(request.fullpath).to eq "/microposts/index"
+            expect(request.fullpath).to eq "/microposts"
         end
     end
 
@@ -52,13 +52,13 @@ RSpec.describe "Microposts", type: :request do
 
         it 'does not destroy a micropost when other user logged in' do
             log_in_as(user)
-            get microposts_index_path
+            get microposts_path
             post_valid_information
             follow_redirect!
             delete destroy_user_session_path
             log_in_as(other_user)
-            get microposts_index_path
-            expect(request.fullpath).to eq "/microposts/index"
+            get microposts_path
+            expect(request.fullpath).to eq "/microposts"
             post_valid_information
             expect{ delete micropost_path(1) }.not_to change(Micropost, :count)
             # expect{ delete micropost_path(2) }.to change(Micropost, :count)
@@ -66,12 +66,12 @@ RSpec.describe "Microposts", type: :request do
 
         xit "succeeds to destroy a micropost" do
             log_in_as(user)
-            get microposts_index_path
+            get microposts_path
             expect{ post_valid_information }.to change(Micropost.reload, :count).by(1)
             follow_redirect!
             expect{ delete micropost_path(1) }.to change(Micropost.reload, :count).by(-1)
             follow_redirect!
-            expect(request.fullpath).to eq "/microposts/index"
+            expect(request.fullpath).to eq "/microposts"
             expect(flash[:success]).to be_truthy
         end
     end

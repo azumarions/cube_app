@@ -10,7 +10,7 @@
         <% if user_signed_in? %>
           <li><strong><%= link_to current_user.username, pages_show_path, class: "drawer-menu-item" %></strong></li>
           <li><%= link_to '攻略', article_path, class: "drawer-menu-item" %></li>
-          <li><%= link_to 'ユーザー', users_index_path, class: "drawer-menu-item" %></li>
+          <li><%= link_to 'ユーザー', users_path, class: "drawer-menu-item" %></li>
           <li><%= link_to 'チャット', microposts_path, class: "drawer-menu-item" %></li>
           <li><%= link_to 'ランキング', clocks_rank_path, class: "drawer-menu-item" %></li>
           <li><%= link_to '編集', articles_index_path, class: "drawer-menu-item" %></li>

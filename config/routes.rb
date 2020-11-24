@@ -17,16 +17,7 @@ Rails.application.routes.draw do
 
   root 'pages#home'
   get 'pages/show'
-  get 'pages/index'
-  get 'users/show'
-  get 'users/index'
-  get 'microposts/show'
-  get 'microposts/index'
-  post 'microposts/new'
-  get 'likes/create'
-  get 'likes/destroy'
   get 'articles/index'
-  get 'strategies/index'
   get 'clocks/rank'
   resources :users do
     member do

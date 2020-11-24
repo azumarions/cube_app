@@ -1,4 +1,5 @@
 class LikesController < ApplicationController
+  before_action :authenticate_user!
   before_action :sign_in_required
 
   def create
@@ -14,7 +15,7 @@ class LikesController < ApplicationController
   end
 
   def destroy
-    @micropost = Like.find(params[:id]).micropost
+    @micropost = Like.find(id: params[:id]).micropost
     if @micropost.like?(current_user)
       @micropost.unlike(current_user)
       @micropost.reload
