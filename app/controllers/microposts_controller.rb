@@ -6,9 +6,9 @@ class MicropostsController < ApplicationController
     @micropost = current_user.microposts.build(micropost_params)
     if @micropost.save
       flash[:success] = "投稿完了!"
-      redirect_to microposts_index_path
+      redirect_to microposts_path
     else
-      render root_path
+      redirect_to microposts_path
     end
   end
 
@@ -30,7 +30,7 @@ class MicropostsController < ApplicationController
   private
   
     def micropost_params
-      params.permit(:comment, :picture)
+      params.permit(:comment)
     end
 
     def correct_user

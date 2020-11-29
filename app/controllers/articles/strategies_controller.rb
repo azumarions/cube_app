@@ -14,7 +14,7 @@ class Articles::StrategiesController < ApplicationController
       redirect_to article_strategies_path
     else
       @feed_items = current_user.feed.page(params[:page]).per(20)
-      render article_path
+      redirect_to article_path
     end
   end
 

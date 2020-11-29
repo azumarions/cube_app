@@ -1,6 +1,6 @@
 class ClocksController < ApplicationController
   before_action :authenticate_user!
-  before_action :correct_user,   only: :destroy
+  before_action :correct_user, only: :destroy
 
   def new
     @clock = Clock.new

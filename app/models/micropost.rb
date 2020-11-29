@@ -5,8 +5,7 @@ class Micropost < ApplicationRecord
   has_one_attached :picture
   default_scope { order(created_at: :desc) }
   validates :user_id, presence: true
-  validates :comment, length: { maximum: 255 }
-  validates :only_user_id, presence: true
+  validates :comment, presence: true, length: { maximum: 255 }
   validate :validate_picture
 
   def resize_picture
@@ -26,10 +25,6 @@ class Micropost < ApplicationRecord
   end
 
   private
-    def only_user_id
-      comment.presence or picture.attached?
-    end
-
     def validate_picture
       if picture.attached?
         if !picture.content_type.in?(%('image/jpeg image/jpg image/png image/gif'))

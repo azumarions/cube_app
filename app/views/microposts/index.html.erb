@@ -4,12 +4,12 @@
       <div id="micropost-<%= micropost.id %>" data-micropost-id="<%= micropost.id %>">
         <div class="micropost">
           <div class="row">
-            <div class="col-3">   
-              <%= image_tag micropost.user.profile.avatar.to_s %>    
-            </div>  
+            <div class="col-3">
+              <%= image_tag micropost.user.profile.avatar.to_s %> 
+            </div>
             <div class="col-6">
               <h5><%= link_to micropost.user.username, micropost.user, class: "users-name text-white" %></h5> 
-            </div>           
+            </div>
             <div class="col-3">
               <% if current_user?(micropost.user) %>
             　  <%= link_to "削除", micropost, method: :delete, data: { confirm: "削除しますか？" }, class: "btn btn-sm btn-danger" %>
