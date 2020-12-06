@@ -19,6 +19,7 @@ set :deploy_to, "/var/www/rails/cube_app"
 
 # Default value for :pty is false
 # set :pty, true
+set :rbenv_ruby, '2.7.0'
 
 # Default value for :linked_files is []
 set :linked_files, fetch(:linked_files, []).push('config/settings.yml')
