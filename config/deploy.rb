@@ -2,7 +2,7 @@
 lock "~> 3.14.1"
 
 set :application, "cube_app"
-set :repo_url, "git@example.com:azumarions/cube_app.git"
+set :repo_url, "git@github.com:azumarions/cube_app.git"
 
 # Default branch is :main
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
