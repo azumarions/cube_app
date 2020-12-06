@@ -1,32 +1,24 @@
-development:
+default: &default
   adapter: mysql2
   encoding: utf8
   reconnect: false
-  database: cube_app_development
   pool: 5
   username: <%= ENV['DATABASE_USERNAME'] %>
   password: <%= ENV['DATABASE_PASSWORD'] %>
   socket: /tmp/mysql.sock
   host: localhost
+
+development:
+  <<: *default
+  database: cube_app_development
 
 test:
-  adapter: mysql2
-  encoding: utf8
-  reconnect: false
+  <<: *default
   database: cube_app_test
-  pool: 5
-  username: <%= ENV['DATABASE_USERNAME'] %>
-  password: <%= ENV['DATABASE_PASSWORD'] %>
-  socket: /tmp/mysql.sock
-  host: localhost
 
 production:
-  adapter: mysql2
-  encoding: utf8
-  reconnect: false
-  database: cube_app_production
-  pool: 5
-  username: <%= ENV['DATABASE_USERNAME'] %>
-  password: <%= ENV['DATABASE_PASSWORD'] %>
-  socket: /tmp/mysql.sock
-  host: localhost
+  <<: *default
+  database: <%= ENV['DB_NAME'] %>
+  username: <%= ENV['DB_USERNAME'] %>
+  password: <%= ENV['DB_PASSWORD'] %>
+  host: <%= ENV['DB_HOSTNAME'] %>
