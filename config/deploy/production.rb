@@ -50,8 +50,3 @@
 # The server-based syntax can be used to override options:
 # ------------------------------------
 server '54.178.52.176', user: 'azuma', roles: %w{app db web}
-
-set :ssh_options, {
-  keys: %w(~/.ssh/cube_key_rsa),
-  forward_agent: true
-}
