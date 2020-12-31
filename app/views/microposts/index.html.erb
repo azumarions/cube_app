@@ -1,4 +1,8 @@
 <% if @microposts.any? %>
+<div class="row">
+<div class="col-1">
+</div>
+<div class="col-10">
   <div class="microposts">
     <% @microposts.each do |micropost| %>
       <div id="micropost-<%= micropost.id %>" data-micropost-id="<%= micropost.id %>">
@@ -15,7 +19,7 @@
             　  <%= link_to "削除", micropost, method: :delete, data: { confirm: "削除しますか？" }, class: "btn btn-sm btn-danger" %>
             　<% end %>
             </div>
-          </div>          
+          </div>     
           <p><%= micropost.comment %></p>
           <% if micropost.picture.attached? %>
             <div class="log-picture">
@@ -34,6 +38,8 @@
       </div>
     <% end %>
   </div>
+</div>
+</div>
   <%= paginate @microposts %>
 <% else %>
   <span>まだ投稿がありません</span>

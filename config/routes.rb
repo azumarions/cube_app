@@ -17,6 +17,7 @@ Rails.application.routes.draw do
 
   root 'pages#home'
   get 'pages/show'
+  get 'pages/contact'
   get 'articles/index'
   get 'clocks/rank'
   resources :users do
@@ -30,6 +31,5 @@ Rails.application.routes.draw do
   resources :users
   resources :relationships,   only: [:create, :destroy]
   resources :likes,   only: [:create, :destroy]
-  resources :stars, only: [:create, :destroy]
   resources :clocks
 end

@@ -12,10 +12,14 @@ class PagesController < ApplicationController
     if logged_in?
       @micropost  = current_user.microposts.build
       @micropost_feed_items = current_user.micropost_feed.page(params[:page]).per(20)
+      @clock_feed_items = current_user.clock_feed.limit(1)
     end
   end
 
   def edit
+  end
+
+  def contact
   end
 
   private

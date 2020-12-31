@@ -1,5 +1,5 @@
 <% if @clock_feed_items.any? %>
-  <ul class="article">
+  <ul class="rank">
     <% @clock_feed_items.reorder(created_at: :desc).each do |clock_feed_item| %>
       <div class="card">
         <div class="card-body">
@@ -23,7 +23,6 @@
     <% end %>   　
   </ul>
 <% else %>
-  <h2 class="text-white">まだ記録がありません</h2>
+  <p class="no-time">まだ記録がありません</p>
 <% end %>
-
   

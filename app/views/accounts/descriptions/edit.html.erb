@@ -1,12 +1,12 @@
 <div class="edit-description">
   <div class="card-deck">
     <div class="col">
-      <section class="card border-light">
+      <section class="card card-extend border-light">
         <h2 class="card-header border-light form-title">メッセージ設定</h2>
           <div class="card-body">
             <%= form_with(model: @profile, url: account_description_path, method: :put, local: true) do |f| %>
               <div class="form-group">
-                <%= f.text_area :description, autofocus: true, class: 'form-control' %>
+                <%= f.text_area :description, autofocus: true, class: 'form-control form-description' %>
               </div>
               <div class="edit-form">
                 <%= link_to 'キャンセル' , account_path, class: "btn btn-light" %>
@@ -14,7 +14,7 @@
               </div>
             <% end %>
           </div>   
-      </section>     
+      </section>
     </div>
   </div>
 </div>

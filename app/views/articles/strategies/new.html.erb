@@ -1,7 +1,7 @@
 <div class="card-deck">
   <div class="col">
-    <section class="card border-light">
-      <h2 class="card-header border-light form-title">新規投稿</h2>
+    <section class="card card-extend border-light">
+      <h2 class="card-header border-light form-title">新規作成</h2>
         <div class="card-body">
           <%= form_with(model: @article, url: article_strategies_path, local: true) do |f| %>
             <div class="form-group">
@@ -10,17 +10,19 @@
             <div class="form-group">
               <%= f.text_area :content, class: 'form-control article-content', placeholder: "コンテンツ" %>
             </div>
-            <div class="custom-file">
-              <%= f.file_field :picture, class: 'custom-file-input' %>
-              <label class="custom-file-label" for="customFile">ファイルを選択...</label>
-            </div>
             <div class="edit-form">
-              <%= link_to 'キャンセル' , article_strategies_path, class: "btn btn-light" %>
-              <%= f.submit "投稿する", class: "btn btn-info" %>
+              <div class="row">
+                <div class="col-6  btn-ar">
+                  <%= link_to 'キャンセル' , article_path, class: "btn btn-light form-control" %>
+                </div>   
+                <div class="col-6  btn-ar">
+                  <%= f.submit "作成する", class: "btn btn-info form-control" %>
+                </div>
+              </div>       
             </div>
           <% end %>
         </div>   
-    </section>     
+    </section>
   </div>
 </div>
   

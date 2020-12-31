@@ -1,13 +1,15 @@
 <div class="row">
-  <div class="col">
+  <div class="col-1">
+  </div>
+  <div class="col-10">
     <section class="stats"> 
       <%= render 'shared/stats' %>
     </section>
     <div class="input-group">
-      <div class="input-group-prepend">
-        <span class="input-group-text" id="basic-addon1"><i class="fab fa-searchengin"></i></span>
-      </div>
-      <input type="text" class="form-control" placeholder="ユーザー名" aria-label="ユーザー名" aria-describedby="basic-addon1">
+      <%= search_form_for @search do |f| %>
+        <%= f.search_field :username_cont, placeholder: 'ユーザー名', class: "search-name" %>
+        <%= f.submit "検索", class: "btn btn-info" %>
+      <% end %>
     </div>
     <% if @users.any? %>
       <ul class="users follow">

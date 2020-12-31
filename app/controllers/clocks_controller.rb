@@ -21,7 +21,7 @@ class ClocksController < ApplicationController
   end
 
   def rank
-    @clocks = Clock.all.limit(15)
+    @clocks = Clock.all.limit(30)
   end
 
   def index

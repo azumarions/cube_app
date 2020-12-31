@@ -1,6 +1,6 @@
 <div class="card-deck">
   <div class="col">
-    <section class="card border-light">
+    <section class="card card-extend border-light">
       <h2 class="card-header border-light form-title">新規投稿</h2>
         <div class="card-body">
           <%= form_with(model: @micropost, url: microposts_path, local: true) do |f| %>
@@ -12,8 +12,14 @@
               <label class="custom-file-label" for="customFile">ファイルを選択...</label>
             </div>
             <div class="edit-form">
-              <%= link_to 'キャンセル' , root_path, class: "btn btn-light" %>
-              <%= f.submit "投稿する", class: "btn btn-info" %>
+              <div class="row">
+                <div class="col-6  btn-ar">
+                  <%= link_to "キャンセル", root_path, class: "btn btn-light form-control" %>
+                </div>   
+                <div class="col-6  btn-ar">
+                  <%= f.submit "投稿する", class: "btn btn-info form-control" %> 
+                </div>
+              </div>
             </div>
           <% end %>
         </div>   

@@ -16,6 +16,11 @@ $cube-dark-blue: #0c2e64;
     padding: 0;
 }
 
+.mybest p {
+    margin: 0;
+}
+
+
 .card {
     border: 0.1rem solid white!important;
 }
@@ -26,4 +31,35 @@ $cube-dark-blue: #0c2e64;
 
 .article-content {
     height: 13rem!important;
+}
+
+.article-a, .article-b, .article-c {
+    margin: 5rem 1rem;
+}
+
+.article-a a {
+    border: 0.1rem solid $cube-dark-white;
+    font-size: 1.5rem;
+    padding: 1.5rem;
+    border-radius: 50%;
+    padding: 60px;
+    background-color: $cube-dark-blue;
+}
+
+.article-b a {
+    border: 0.1rem solid $cube-dark-white;
+    font-size: 1.5rem;
+    padding: 1.5rem;
+    border-radius: 50%;
+    padding: 60px;
+    background-color: $cube-yellow;
+}
+
+.article-c a {
+    border: 0.1rem solid $cube-dark-white;
+    font-size: 1.5rem;
+    padding: 1.5rem;
+    border-radius: 50%;
+    padding: 60px;
+    background-color: $cube-red;
 }

@@ -10,7 +10,7 @@ class Accounts::NamesController < ApplicationController
       if @profile.update(profile_params)
           format.html {
               redirect_to account_path,
-              notice: "変更しました"
+              success: "変更しました"
           }
       else
           format.html {

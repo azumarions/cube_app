@@ -1,7 +1,7 @@
 <div class="card-deck">
   <div class="col">
-    <section class="card border-light">
-      <h2 class="card-header border-light form-title">プロフィール画像設定</h2>
+    <section class="card card-extend border-light">
+      <h4 class="card-header border-light form-title">プロフィール画像設定</h4>
         <div class="card-body">
           <%= form_with(model: @profile, url: account_avatar_path, method: :put, local: true) do |f| %>
             <div class="edit-avatar">      

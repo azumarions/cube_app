@@ -57,3 +57,101 @@
 .my-white {
     color: white;
 }
+
+.jumbotron-extend2 {
+    background-color: white;
+    h1 {
+        color: black;
+    }
+    p {
+        color: black;
+    }
+}
+
+.discription-container {
+    text-align: center;
+    padding-bottom: 2rem;
+    p {
+        text-align: left;
+    }
+    h1 {
+        padding-top: 6rem; 
+        display: inline-block;      
+        border-bottom: 0.1rem solid cyan;
+    }
+    h2 {
+        color: white;
+        border-bottom: 0.1rem solid blue;
+        margin-bottom: 3rem;
+    }
+    h3 {
+        color: white;
+    }
+    h4 {
+        color: white;
+    }
+    h5 {
+        color: white;
+    }
+    .test-login {
+        padding: 2rem;
+    }
+}
+
+.jumbotron-extend {
+    height: 80vh;
+    min-height: 250px;
+    position: relative;
+    background-image: url(./photo.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding-top: 4rem!important;
+    padding-bottom: 4rem!important;
+    h1 {
+        color: white;
+    }
+}
+
+.discription-img-container {
+    padding: 0;
+}
+
+.pc_area{
+    display:block;
+}
+
+@media screen and (max-width: 768px){
+    .pc_area{
+        display:none;
+    }
+}
+
+.footer-menu {
+    position: fixed;
+    padding-right: 2rem;
+    padding-left: 0;
+    margin-top: 1rem;
+    li {
+        padding: 1rem 3rem;
+        border-right: 0.1rem solid white;
+        border-bottom: 0.1rem solid white;
+    }
+}
+
+.menu-item {
+    color: white;
+}
+
+.fa-icon {
+    padding-right: 1rem;
+}
+
+.home {
+    .container {
+        margin-top: 2rem;
+    }
+}
+
+.contact {
+    margin-top: 2rem;
+}

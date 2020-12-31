@@ -6,12 +6,14 @@
 }
 
 .wrap {
+    padding-top: 3rem;
     position: relative;
     background-color: #050c17;
     text-align: center;
 }
 
 .air {
+    padding-top: 3rem;
     text-align: center;
     position: fixed;
     width: 100%;
@@ -35,7 +37,7 @@
 .btn-sb {
     margin-top: 25px;
     border-radius: 50px!important;
-    padding: 10px 30px!important;
+    padding: 10px 60px!important;
     border-color: #050c17!important;
     background: linear-gradient(45deg,  #104966, #06b8c5);
 }
@@ -94,23 +96,20 @@
     left: 0;
 }
 
-#animateCircle.addAnimation{
-    stroke-dasharray: 770;
-    stroke-dashoffset: -770;
-    animation: animatecircle 60s linear infinite;
-    animation-play-state: paused;
-}
-
-@keyframes animateCircle{
-    from{
-        stroke-dashoffset: 0;
-    }
-}
-
 .defaultCircle {
     opacity: 0.3;
 }
 
 .clock-time {
     padding: 0!important;
+}
+
+.rank {
+    padding: 0;
+    margin-top: 2rem;
+}
+
+.no-time {
+    text-align: center;
+    margin-top: 2rem;
 }

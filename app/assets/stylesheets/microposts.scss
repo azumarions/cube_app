@@ -5,7 +5,6 @@
 }
 
 .micropost img {
-    margin-left: 1rem;
     width: 3rem;
     height: 3rem;
     border-radius: 50%;
@@ -23,6 +22,7 @@
 .micropost p {
     padding-left: 4rem;
     margin-bottom: 0;
+    font-size: 13px;
 }
 
 .micropost-time {
@@ -37,6 +37,15 @@
 
 #comment {
     height: 13rem;
+}
+
+.micropost-page {
+    border-top: 0.1rem solid white;
+    padding-top: 1rem;
+    h5 {
+        text-align: center;
+        color: white;
+    }
 }
 
 

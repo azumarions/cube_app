@@ -1,17 +1,21 @@
 <div class="edit-index">
   <div class="row">
-    <div class="col">           
-      <ul class="list-group">
-        <div class="edit-group">
-          <%= link_to '攻略一覧', article_strategies_path, class: "list-group-item list-group-item-action" %>          
-        </div>
-        <div class="edit-group">
-          <%= link_to '作成する', new_article_strategy_path, class: "list-group-item list-group-item-action" %>
-        </div>
-        <div class="edit-group">
-          <%= link_to '獲得スター数', "#", class: "list-group-item list-group-item-action" %>
-        </div>
-      </ul>
+    <div class="col-md-6">
+      <div class="article-a">
+        <%= link_to '記事一覧', article_strategies_path, class: "list" %>          
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="article-b">
+        <%= link_to '作成する', new_article_strategy_path, class: "list" %>
+      </div>
+    </div>
+    <div class="col-md-3">
+    </div>
+    <div class="col-md-6">
+      <div class="article-c">
+        <%= link_to '編集する', articles_index_path, class: "list" %>
+      </div>
     </div>
   </div>
 </div>

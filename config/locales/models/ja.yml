@@ -1,8 +1,9 @@
 ja:
   activerecord:
     models:
-      user: ユーザ
+      user: ユーザー
       micropost: 投稿
+      article: 記事
     attributes:
       user:
         username: 名前
@@ -14,3 +15,7 @@ ja:
         picture: 画像
         user_id: ユーザID
         only_user_id: 入力欄
+      article:
+        title: タイトル
+        content: 内容
+        

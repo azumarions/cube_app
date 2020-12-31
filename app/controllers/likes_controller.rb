@@ -15,7 +15,7 @@ class LikesController < ApplicationController
   end
 
   def destroy
-    @micropost = Like.find(id: params[:id]).micropost
+    @micropost = Like.find(params[:id]).micropost
     if @micropost.like?(current_user)
       @micropost.unlike(current_user)
       @micropost.reload

@@ -10,7 +10,7 @@ class Articles::StrategiesController < ApplicationController
   def create
     @article = current_user.articles.build(article_params)
     if @article.save
-      flash[:success] = "投稿完了!"
+      flash[:success] = "作成完了!"
       redirect_to article_strategies_path
     else
       @feed_items = current_user.feed.page(params[:page]).per(20)
@@ -25,12 +25,14 @@ class Articles::StrategiesController < ApplicationController
   def index
     @articles = Article.all
     @articles = Article.page(params[:page]).per(20)
+    @search = Article.ransack(params[:q])
+    @articles = @search.result(distinct: true).page(params[:page]).per(20)
   end
 
   def edit
     @article = current_user.articles.find_by(id: params[:id]) || nil
     if @article.nil?
-      flash[:warning] = "編集権限がありません"
+      flash[:success] = "編集権限がありません"
       redirect_to articles_index_path
     end
   end

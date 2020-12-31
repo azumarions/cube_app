@@ -1,25 +1,30 @@
 <div class="articles-index">
-  <div class="input-group">
-    <div class="input-group-prepend">
-        <span class="input-group-text" id="basic-addon1"><i class="fab fa-searchengin"></i></span>
-    </div>
-    <input type="text" class="form-control" placeholder="検索" aria-label="検索" aria-describedby="basic-addon1">
+<div class="row">
+  <div class="col-1">
   </div>
-  <% if @articles.any? %>
-    <ul class="article">
-      <% @articles.each do |article| %>
-        <div class="card">
-          <div class="card-body">
-          <div id="article-<%= article.id %>" data-article-id="<%= article.id %>">      
-            <li class="card-text"><%= link_to article.title, article_strategy_path(id: article), class: "text-white" %></li>
-            <%= render "stars/star", article: article %>
-          </div> 
-          </div>  
-        </div>               　        
-      <% end %>   　
-    </ul>
-  <%= paginate @articles %>
-  <% else %>
-    <span>まだ投稿がありません</span>
-  <% end %>
+  <div class="col-10">
+    <div class="input-group">
+      <%= search_form_for @search, url: article_strategies_path do |f| %>
+        <%= f.search_field :title_cont, placeholder: '検索', class: "search-name" %>
+        <%= f.submit "検索", class: "btn btn-info" %>
+      <% end %>
+    </div>
+    <% if @articles.any? %>
+      <ul class="article">
+        <% @articles.each do |article| %>
+          <div class="card">
+            <div class="card-body">
+            <div id="article-<%= article.id %>" data-article-id="<%= article.id %>">      
+              <li class="card-text"><%= link_to article.title, article_strategy_path(id: article), class: "text-white" %></li>
+            </div> 
+            </div>  
+          </div>               　        
+        <% end %>   　
+      </ul>
+    <%= paginate @articles %>
+    <% else %>
+      <span>まだ投稿がありません</span>
+    <% end %>
+  </div>
+</div>
 </div>

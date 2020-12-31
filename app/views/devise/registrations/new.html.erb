@@ -1,34 +1,37 @@
-<div class="row">
-  <div class="col">
-  　<div class="signup-logo-img">
-        <%= link_to image_tag('cube_icon.png', width: 150), root_path, class: "logo-img" %>
+<div class="signup">
+  <div class="row">
+    <div class="col-1">
     </div>
-  　<h1 class="signup-title">新規ユーザー作成</h1>
-    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-      <%= render "devise/shared/error_messages", resource: resource %>
-
-      <div class="form-group">
-        <%= f.text_field :username, autofocus: true, autocomplete: "name", class: 'form-control', placeholder: "名前" %>
+    <div class="col-10">
+    　<div class="signup-logo-img">
+          <%= link_to image_tag('cube_icon.png', width: 90), root_path, class: "logo-img" %>
       </div>
+    　<h1 class="signup-title">新規ユーザー作成</h1>
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%= render "devise/shared/error_messages", resource: resource %>
 
-      <div class="form-group">
-        <%= f.email_field :email, class: 'form-control', placeholder: "メールアドレス" %>
-      </div>
+        <div class="form-group">
+          <%= f.text_field :username, autofocus: true, autocomplete: "name", class: 'form-control', placeholder: "名前" %>
+        </div>
 
-      <div class="form-group">
-        <%= f.password_field :password, autocomplete: "new-password", class: 'form-control', placeholder: "パスワード" %>
-        <% if @minimum_password_length %>
-        <em><p>(<%= @minimum_password_length %>文字以上)<p></em>
-        <% end %>
-      </div>
+        <div class="form-group">
+          <%= f.email_field :email, class: 'form-control', placeholder: "メールアドレス" %>
+        </div>
 
-      <div class="form-group">
-        <%= f.password_field :password_confirmation, autocomplete: "new-password", class: 'form-control', placeholder: "パスワード（再入力）" %>
-      </div>
+        <div class="form-group">
+          <%= f.password_field :password, autocomplete: "new-password", class: 'form-control', placeholder: "パスワード(6文字以上)" %>
+        </div>
 
-      <div class="form-group">
-        <%= f.submit "新規ユーザー作成", class: "btn btn-info btn-lg form-submit" %>
-      </div>
-    <% end %>
+        <div class="form-group">
+          <%= f.password_field :password_confirmation, autocomplete: "new-password", class: 'form-control', placeholder: "パスワード（再入力）" %>
+        </div>
 
-    <%= render "devise/shared/links" %>
+        <div class="form-group">
+          <%= f.submit "新規ユーザー作成", class: "btn btn-info btn-lg form-submit" %>
+        </div>
+      <% end %>
+
+      <%= render "devise/shared/links" %>
+    </div>
+  </div>
+</div>
