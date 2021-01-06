@@ -32,7 +32,7 @@ class Articles::StrategiesController < ApplicationController
   def edit
     @article = current_user.articles.find_by(id: params[:id]) || nil
     if @article.nil?
-      flash[:success] = "編集権限がありません"
+      flash[:success] = "記事を削除しました"
       redirect_to articles_index_path
     end
   end

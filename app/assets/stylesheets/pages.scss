@@ -94,7 +94,7 @@
         color: white;
     }
     .test-login {
-        padding: 2rem;
+        padding-top: 2rem;
     }
 }
 
@@ -154,4 +154,21 @@
 
 .contact {
     margin-top: 2rem;
+}
+
+.about {
+    text-align: left;
+}
+
+.step {
+    .card {
+        border: 0.1rem solid#050c17!important;
+    }
+    p {
+        font-size: 15px;
+    }
+}
+
+.mb-0 button {
+    font-size: 22px;
 }

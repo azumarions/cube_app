@@ -19,6 +19,10 @@ class User < ApplicationRecord
 
   validates :username,  presence: true, length: { maximum: 50 }
   validates :email, presence: true, length: { maximum: 255 }
+
+  def self.guest
+    user = User.find(1)
+  end
   
   def feed
     Article.where("user_id = ?", id)

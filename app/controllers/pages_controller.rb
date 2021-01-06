@@ -9,11 +9,9 @@ class PagesController < ApplicationController
   end
 
   def show
-    if logged_in?
       @micropost  = current_user.microposts.build
       @micropost_feed_items = current_user.micropost_feed.page(params[:page]).per(20)
       @clock_feed_items = current_user.clock_feed.limit(1)
-    end
   end
 
   def edit
@@ -24,13 +22,8 @@ class PagesController < ApplicationController
 
   private
 
-  def logged_in?
-    !current_user.nil?
-  end
-
-
-    # def set_profile
-    #    @profile = current_user.profile
-    # end
+  #  def set_profile
+     #  @profile = current_user.profile.avatar
+  #  end
 
 end

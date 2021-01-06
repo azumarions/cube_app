@@ -6,10 +6,11 @@
           <%= form_with(model: @profile, url: account_avatar_path, method: :put, local: true) do |f| %>
             <div class="edit-avatar">      
               <div class="circle-avatar">
-                <%= image_tag @profile.avatar.to_s, id: "avatar-prev" %>
                 <% if @profile.avatar? %>
+                  <%= image_tag @profile.avatar.to_s, id: "avatar-prev" %>
                   <label><%= f.check_box :remove_avatar %> 画像を削除する</label>
                 <% else %>
+                  <%= image_tag 'no_avatar.png', class: "float-center border mb-2 mx-auto", id: "avatar-prev" %> 
                   <%= f.hidden_field :avatar_cache %>
                 <% end %>
               </div>

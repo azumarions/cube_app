@@ -8,13 +8,17 @@
       <div id="micropost-<%= micropost.id %>" data-micropost-id="<%= micropost.id %>">
         <div class="micropost">
           <div class="row">
-            <div class="col-3">
-              <%= image_tag micropost.user.profile.avatar.to_s %> 
+            <div class="col-1">
+              <% if micropost.user.profile.avatar? %>
+                <%= image_tag micropost.user.profile.avatar.to_s, class: "float-center border mb-2 mx-auto" %>
+              <% else %>
+                <%= image_tag 'no_avatar.png', class: "float-center border mb-2 mx-auto" %> 
+              <% end %>
             </div>
-            <div class="col-6">
-              <h5><%= link_to micropost.user.username, micropost.user, class: "users-name text-white" %></h5> 
+            <div class="col-8 users-name">
+              <p><%= link_to micropost.user.username, micropost.user, class: "users-name text-white" %></p> 
             </div>
-            <div class="col-3">
+            <div class="col-2">
               <% if current_user?(micropost.user) %>
             　  <%= link_to "削除", micropost, method: :delete, data: { confirm: "削除しますか？" }, class: "btn btn-sm btn-danger" %>
             　<% end %>

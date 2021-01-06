@@ -4,11 +4,9 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    if logged_in?
-      @micropost  = @user.microposts.build
-      @micropost_feed_items = @user.micropost_feed.page(params[:page]).per(20)
-      @clock_feed_items = @user.clock_feed.limit(1)
-    end
+    @micropost  = @user.microposts.build
+    @micropost_feed_items = @user.micropost_feed.page(params[:page]).per(20)
+    @clock_feed_items = @user.clock_feed.limit(1)
   end
 
   def index
@@ -32,11 +30,5 @@ class UsersController < ApplicationController
     @search = User.ransack(params[:q])
     @users_search = @search.result(distinct: true).page(params[:page]).per(20)
     render 'show_follow'
-  end
-
-  private
-
-  def logged_in?
-    !current_user.nil?
   end
 end

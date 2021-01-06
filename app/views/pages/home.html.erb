@@ -23,7 +23,7 @@
        <div class="col-6 col-md-4">
         <div class="home-icon">
           <%= link_to '', article_path, class: "fas fa-book fa-4x faa-pulse animated my-orange" %>
-          <p>攻略</p>
+          <p>学習</p>
         </div>
       </div> 
       <div class="col-6 col-md-4">
@@ -71,21 +71,21 @@
       <h2>ABOUT.</h2>
     </div>
     <div class="row">
-      <div class="col-md-6">
-        <div class="signup-logo-img">
-          <%= image_tag('cube2.png', width: 250) %>
-        </div>
-        <p class="test-login">※テストログインができます!</p>
-      </div>
-      <div class="col-md-6">
+      <div class="col-md-6 about">
         <h3>R.Cuberとは？</h3>
         <p>R.Cuberとは,ルービックキューブのためのwebアプリケーションです。</p>
         <p>ルービックキューブ...できるようになりたくないですか？極めたくないですか？</p>
         <h4>2つの目的があります。</h4>
         <p>1.立体パズルの魅力を知り楽しんでもらうこと。</p>
         <p>2.ロジックを理解し競技性を高めること。</p>
-        <h5>興味を持ったらいますぐ始めよう</h5>
+        <h5>興味を持ったらいますぐ始めよう！</h5>
         <%= link_to "はじめる", new_user_registration_path, class: "btn btn-info btn-lg" %>
+        <p class="test-login">※ゲストログインができます!</p>
+      </div>
+      <div class="col-md-6">
+        <div class="signup-logo-img">
+          <%= image_tag('cube7.png', width: 250) %>
+        </div>
       </div>
     </div>
   </div>
@@ -124,24 +124,102 @@
       </div>
     </div>
   </div>
+
   <div class="container discription-container">
     <div class="title">
-      <h2>PROFILE.</h2>
+      <h2>TRY.</h2>
     </div>
     <div class="row">
-      <div class="col-md-6">
-        <p>Katagiri Azuma</p>
-        <p>Meiji University</p>
-        <p>19years</p>
-        <p>BackEndEngineer(仮)</p>
-      </div>
-      <div class="col-md-6">
-        <div class="signup-logo-img">
-          <%= image_tag('cube3.jpg', width: 250) %>
+      <div class="col">
+        <div class="accordion step" id="accordion">
+          <div class="card">
+            <div id="headingOne">
+              <h4 class="mb-0">
+                <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                  STEP1　LOGIN
+                </button>
+              </h4>
+            </div>
+            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+              <div class="row">
+                <div class="col-md-4">
+                </div>
+                <div class="col-md-6">
+                  <p>1.左上のグローバルメニューからゲストログインを選択する。</p>
+                  <p>2.ゲストユーザーとしてログインできます。</p>
+                  <p>3.ログインするとホームが表示されます。</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div id="headingTwo">
+              <h4 class="mb-0">
+                <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                  STEP2　TIMER
+                </button>
+              </h4>
+            </div>
+            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+              <div class="row">
+                <div class="col-md-4">
+                </div>
+                <div class="col-md-6">
+                  <p>1.グローバルメニューからタイマーを選択する。</p>
+                  <p>2.時間を測って記録してみよう！</p>
+                  <p>3.計測記録のページが表示され今のタイムを見ることができます！</p>
+                  <p>4.グローバルメニューからランキングを選択する。</p>
+                  <p>5.全ユーザーのタイムが早い順に表示されます。自分のタイムがあるか確認しよう！</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div id="headingThree">
+              <h4 class="mb-0">
+                <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                  STEP3　CHAT
+                </button>
+              </h4>
+            </div>
+            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+              <div class="row">
+                <div class="col-md-4">
+                </div>
+                <div class="col-md-6">
+                  <p>1.グローバルメニューから投稿を選択する。</p>
+                  <p>2.メッセージを投稿してみよう！</p>
+                  <p>3.チャットページが表示され、投稿されたメッセージを見ることができます。</p>
+                  <p>4.他のユーザーの投稿にいいねをしよう！</p>
+                  <p>5.気になったユーザーのプロフィールを見てフォローする事もできます！(ユーザー名からプロフィールにいけます。)</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div id="headingFour">
+              <h4 class="mb-0">
+                <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                  STEP4　LERAN
+                </button>
+              </h4>
+            </div>
+            <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
+              <div class="row">
+                <div class="col-md-4">
+                </div>
+                <div class="col-md-6">
+                  <p>1.グローバルメニューから学習を選択する。</p>
+                  <p>2.記事一覧から気になった記事を読むことができます！</p>
+                  <p>3.作成するから自分で記事をつくることができます！</p>
+                  <p>4.編集から自分の記事を編集できます。</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-    <p>@2020 R.Cuber.</p>
-  </div>  
+  </div>
 </div>
 <% end %>

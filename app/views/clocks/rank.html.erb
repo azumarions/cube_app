@@ -1,40 +1,44 @@
 <div class="row">
-<div class="col-1">
-</div>
-<div class="col-10">
-<% if @clocks.any? %>
-  <ul class="rank">
-    <% @clocks.each.with_index(1) do |clock, i| %>
-      <div class="card">
-        <div class="card-body">
-          <div id="clock-<%= clock.id %>" data-article-id="<%= clock.id %>">
-            <li class="card-text">
-              <div class="row">
-                <div class="col-3 col-md-1">
-                  <p><%= i %></p>
-                </div>
-                <div class="col-9 col-md-4">
-                  <p><%= clock.hour %></p>
-                </div>
-                <div class="col-1">
-                </div>
-                <div class="col-4 col-md-2">
-                  <div class="users-avatar">
-                    <%= image_tag clock.user.profile.avatar.to_s %>
+  <div class="col-1">
+  </div>
+  <div class="col-10">
+    <% if @clocks.any? %>
+      <ul class="rank">
+        <% @clocks.each.with_index(1) do |clock, i| %>
+          <div class="card">
+            <div class="card-body">
+              <div id="clock-<%= clock.id %>" data-article-id="<%= clock.id %>">
+                <li class="card-text">
+                  <div class="row">
+                    <div class="col-3 col-md-1">
+                      <p><%= i %></p>
+                    </div>
+                    <div class="col-9 col-md-4">
+                      <p><%= clock.hour %></p>
+                    </div>
+                    <div class="col-1">
+                    </div>
+                    <div class="col-4 col-md-2">
+                      <div class="users-avatar">
+                        <% if clock.user.profile.avatar? %>
+                          <%= image_tag clock.user.profile.avatar.to_s, class: "float-center border mb-2 mx-auto" %>
+                        <% else %>
+                          <%= image_tag 'no_avatar.png', class: "float-center border mb-2 mx-auto" %> 
+                        <% end %>
+                      </div>
+                    </div> 
+                    <div class="col-6 col-md-4 users-name">
+                      <p><%= link_to clock.user.username, clock.user, class: "text-white" %></p>
+                    </div>
                   </div>
-                </div> 
-                <div class="col-6 col-md-4 users-name">
-                  <p><%= link_to clock.user.username, clock.user, class: "text-white" %></p>
-                </div>
-              </div>
-            </li>
-          </div> 
-        </div>  
-      </div>               　        
-    <% end %>   　
-  </ul>
-<% else %>
-  <h1 class="text-white">まだ記録がありません</h1>
-<% end %>
-</div>
+                </li>
+              </div> 
+            </div>  
+          </div>               　        
+        <% end %>   　
+      </ul>
+    <% else %>
+      <h1 class="text-white">まだ記録がありません</h1>
+    <% end %>
+  </div>
 </div>

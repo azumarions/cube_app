@@ -1,4 +1,5 @@
 class ClocksController < ApplicationController
+  before_action :sign_in_required
   before_action :authenticate_user!
   before_action :correct_user, only: :destroy
 
@@ -25,10 +26,8 @@ class ClocksController < ApplicationController
   end
 
   def index
-    if logged_in?
       @clock  = current_user.clocks.build
       @clock_feed_items = current_user.clock_feed.page(params[:page]).per(20)
-    end
   end
 
   def edit
@@ -52,9 +51,5 @@ class ClocksController < ApplicationController
     def correct_user
       @clock = current_user.clocks.find_by(id: params[:id])
       redirect_to root_url if @clock.nil?
-    end
-
-    def logged_in?
-      !current_user.nil?
     end
 end
