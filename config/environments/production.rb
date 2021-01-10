@@ -112,13 +112,13 @@ Rails.application.configure do
 
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :smtp
-  config.action_mailer.default_url_options = { host: Rails.application.credentials.host_server[:ip] }
+  config.action_mailer.default_url_options = { host: '18.181.10.86' }
   ActionMailer::Base.smtp_settings = {
     :address        => 'smtp.gmail.com',
     :port           => '587',
     :authentication => :login,
-    :user_name      => Rails.application.credentials.gmail[:user_name],
-    :password       => Rails.application.credentials.gmail[:password],
+    :user_name      => 'azuminium24@gmail.com',
+    :password       => 'unhlxomdpszvtqma',
     :domain         => 'gmail.com',
     :enable_starttls_auto => true
   }
