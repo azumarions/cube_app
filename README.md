@@ -30,6 +30,7 @@ R.Cuberはルービックキューブのためのアプリケーションです�
 - 開発環境(MacOS, VScode, git, github, bash)
 
 # インフラ構成
+![overview image](https://github.com/azumarions/cube_app/blob/main/app/assets/images/cube_aws.png?raw=true)
 
 # 機能
 
