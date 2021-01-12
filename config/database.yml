@@ -3,9 +3,9 @@ default: &default
   encoding: utf8
   reconnect: false
   pool: 5
-  username: <%= ENV['DB_USERNAME'] %>
-  password: <%= ENV['DB_PASSWORD'] %>
-  host: <%= ENV['DB_HOSTNAME'] %>
+  username: azuma
+  password: azuma1224
+  host: localhost
   socket: /tmp/mysql.sock
 
 development:
