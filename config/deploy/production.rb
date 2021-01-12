@@ -49,6 +49,6 @@
 #
 # The server-based syntax can be used to override options:
 # ------------------------------------
-server '18.181.10.86', user: 'azuma', roles: %w{app db web}
+server '54.64.114.121', user: 'azuma', roles: %w{app db web}
 
 set :ssh_options, keys: '~/.ssh/cube_key_rsa'
