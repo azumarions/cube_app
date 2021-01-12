@@ -1,7 +1,5 @@
 <div class="row">
-  <div class="col-1">
-  </div>
-  <div class="col-10">
+  <div class="col">
     <% if @clocks.any? %>
       <ul class="rank">
         <% @clocks.each.with_index(1) do |clock, i| %>
@@ -11,10 +9,10 @@
                 <li class="card-text">
                   <div class="row">
                     <div class="col-3 col-md-1">
-                      <p><%= i %></p>
+                      <h5><%= i %>位</h5>
                     </div>
                     <div class="col-9 col-md-4">
-                      <p><%= clock.hour %></p>
+                      <h5><%= clock.hour %></h5>
                     </div>
                     <div class="col-1">
                     </div>
@@ -38,7 +36,7 @@
         <% end %>   　
       </ul>
     <% else %>
-      <h1 class="text-white">まだ記録がありません</h1>
+      <h5 class="no-data">まだ記録がありません</h5>
     <% end %>
   </div>
 </div>

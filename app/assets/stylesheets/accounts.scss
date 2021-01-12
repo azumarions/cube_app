@@ -1,4 +1,28 @@
-// Place all the styles related to the accounts controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
+$cube-light-white: #f5f5f6;
+$cube-dark-white: #cdced1;
+$cube-black: #050c17;
+$cube-red: #b1046b;
+$cube-violet: #640c41;
+$cube-yellow: #bdb319;
+$cube-blue: #0071bc;
+$cube-dark-blue: #0c2e64;
 
+.account-group a {
+    border: 0.1rem solid $cube-dark-white;
+    font-size: 1.2rem;
+    padding: 1.5rem;
+    margin-top: 1.5rem;
+    color: $cube-light-white;
+}
+
+.custom-file-label {
+    text-align: left;
+}
+
+.circle-avatar img {
+    margin-bottom: 1rem;
+    width: 7rem;
+    height: 7rem;
+    border-radius: 50%;
+    object-fit: cover;
+}

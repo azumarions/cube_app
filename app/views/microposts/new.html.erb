@@ -1,25 +1,27 @@
-<div class="card-deck">
+<div class="row">
   <div class="col">
-    <section class="card card-extend border-light">
-      <h2 class="card-header border-light form-title">新規投稿</h2>
-        <div class="card-body">
-          <%= form_with(model: @micropost, url: microposts_path, local: true) do |f| %>
-            <div class="form-group">
-              <%= f.text_area :comment, autofocus: true, class: 'form-control' %>
-            </div>
-            <div class="edit-form">
-              <div class="row">
-                <div class="col-6  btn-ar">
-                  <%= link_to "キャンセル", root_path, class: "btn btn-light form-control" %>
-                </div>   
-                <div class="col-6  btn-ar">
-                  <%= f.submit "投稿する", class: "btn btn-info form-control" %> 
+    <div class="card-deck">
+      <section class="card card-extend border-light">
+        <div class="card-header border-light card-title">新規投稿</div>
+          <div class="card-body">
+            <%= form_with(model: @micropost, url: microposts_path, local: true) do |f| %>
+              <div class="form-group">
+                <%= f.text_area :comment, autofocus: true, class: 'form-control' %>
+              </div>
+              <div class="submit-form">
+                <div class="row">
+                  <div class="col-6  btn-ar">
+                    <%= link_to "キャンセル", root_path, class: "btn btn-light form-control" %>
+                  </div>
+                  <div class="col-6  btn-ar">
+                    <%= f.submit "投稿する", class: "btn btn-info form-control" %>
+                  </div>
                 </div>
               </div>
-            </div>
-          <% end %>
-        </div>   
-    </section>     
+            <% end %>
+          </div>
+      </section>
+    </div>
   </div>
 </div>
   

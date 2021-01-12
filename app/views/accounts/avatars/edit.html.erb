@@ -1,10 +1,10 @@
-<div class="card-deck">
+<div class="row"> 
   <div class="col">
-    <section class="card card-extend border-light">
-      <h4 class="card-header border-light form-title">プロフィール画像設定</h4>
-        <div class="card-body">
-          <%= form_with(model: @profile, url: account_avatar_path, method: :put, local: true) do |f| %>
-            <div class="edit-avatar">      
+    <div class="card-deck">
+      <section class="card card-extend border-light">
+        <div class="card-header border-light card-title">プロフィール画像</div>
+          <div class="card-body">
+            <%= form_with(model: @profile, url: account_avatar_path, method: :put, local: true) do |f| %>
               <div class="circle-avatar">
                 <% if @profile.avatar? %>
                   <%= image_tag @profile.avatar.to_s, id: "avatar-prev" %>
@@ -16,16 +16,16 @@
               </div>
               <div class="custom-file">
                 <%= f.file_field :avatar, id: "avatar-img", class: "custom-file-input" %>
-                <label class="custom-file-label" for="customFile">ファイルを選択...</label>      
-              </div>             
-              <div class="edit-form">
+                <label class="custom-file-label" for="customFile">ファイルを選択...</label>   
+              </div>
+              <div class="form-submit">
                 <%= link_to 'キャンセル' , account_path, class: "btn btn-light" %>
                 <%= f.submit "変更する", class: "btn btn-primary" %>
               </div>
-            </div>
-          <% end %>
-        </div>   
-    </section>     
+            <% end %>
+          </div>
+      </section>
+    </div>
   </div>
 </div>
 

@@ -7,8 +7,8 @@
         <% else %>
           <%= image_tag 'no_avatar.png', class: "float-center border mb-2 mx-auto" %> 
         <% end %> 
-      </div>  
-      <div class="col-8 users-name">
+      </div>
+      <div class="col-8 micropost-name">
         <p><%= link_to micropost.user.username, micropost.user, class: "users-name text-white" %></p> 
       </div>
       <div class="col-2">
@@ -17,15 +17,10 @@
         <% end %>
       </div>
     </div>
-    <p><%= micropost.comment %></p>
-    <% if micropost.picture.attached? %>
-      <div class="log-picture">
-        <%= image_tag micropost.resize_picture %>
-      </div>
-    <% end %>
+    <p><%= safe_join(micropost.comment.split("\n"),tag(:br)) %></p>
     <div class="row">
       <div class="col-8">
-        <p class="micropost-time"><%= time_ago_in_words(micropost.created_at) %>前</span>  
+        <p class="micropost-time"><%= time_ago_in_words(micropost.created_at) %>前</span>
       </div>
       <div class="col-4">
         <%= render "likes/like", micropost: micropost %>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>R.Cuber</title>
+    <title>Ruber</title>
     <%= render 'layouts/rails_default' %>
   </head>
 
@@ -12,20 +12,15 @@
       <% flash.each do |message_type, message| %>
         <div class="alert alert-<%= message_type %>"><%= message %></div>
       <% end %>
-      <div class="row">
-        <div class="col-md-3 pc_area">
-          <%= render 'layouts/footer' %>
-        </div>
-        <% if user_signed_in? %>
-          <div class="col-md-8">
-            <%= yield %>
-          </div>
-        <% else %>
-          <div class="col-12">
-            <%= yield %>
-          </div>
-        <% end %>
-      </div>
+
+      <% if user_signed_in? %>
+        <div class="container">
+          <%= yield %>
+        <div>
+      <% else %>
+        <%= yield %>
+      <% end %>
+      
     </main>
 
     <script>

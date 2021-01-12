@@ -9,24 +9,23 @@ $cube-yellow: #bdb319;
 $cube-blue: #0071bc;
 $cube-dark-blue: #0c2e64;
 
-
 body {
     background-color: $cube-black!important;
     padding-top: 4rem;
 }
 
-.rlogo {
-    padding: 0 7rem;
+.no-data {
     color: white;
-    font-size: 2rem;  
-}
-
-.alert {
-    background-color: $cube-blue;
     text-align: center;
-    margin: 0!important;
+    margin-top: 2rem;
 }
 
+.best-time {
+    color: $cube-blue;
+    border: 0.1rem solid $cube-blue!important;
+}
+
+//error
 #error_explanation {
     color: red;
     text-align: center;
@@ -36,23 +35,13 @@ body {
     }
 }
 
-h1 {
-    color:  $cube-light-white;
+.alert {
+    background-color: $cube-blue;
+    text-align: center;
+    margin: 0!important;
 }
 
-h3 {
-    color:  $cube-light-white;
-}
-
-p {
-    color: $cube-light-white;
-}
-
-li {
-    list-style: none;
-}
-  
-
+//header
 .drawer-nav {
     background-color: black!important;
 }
@@ -65,10 +54,14 @@ li {
     color: $cube-light-white;
 }
 
-
-
 #logo {
     font-size: 2rem;
+}
+
+.rlogo {
+    padding: 0 7rem;
+    color: white;
+    font-size: 2rem;  
 }
 
 .navbar-extend {
@@ -76,6 +69,28 @@ li {
     padding-bottom: 2rem;
     border-bottom: 0.1rem solid $cube-light-white;
     background-color: black;
+}
+
+//card
+.card-deck {
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.card-title {
+    font-weight: normal;
+    font-size: 1.5rem;
+    color: $cube-light-white;
+}
+
+.card {
+    background-color: $cube-black!important;
+    border-color: $cube-light-white!important;
+    color: $cube-light-white!important;
+}
+
+.card-extend {
+    margin-top: 2rem;
 }
 
 // button
@@ -96,6 +111,8 @@ li {
     margin-top: 0.8rem;
 }
 
+//ransack
+
 .input-group {
     text-align: center;
 }
@@ -105,11 +122,16 @@ li {
     border-radius: 5%;
 }
 
-.form-description {
-    height: 8rem!important;
+//list
+li {
+    list-style: none;
 }
 
-// login
+.list-group-item {
+    background-color: $cube-black!important;
+}
+
+// login, signup
 .password, .confirm {
     margin-top: 2rem;
 }
@@ -123,113 +145,15 @@ li {
     text-align: center;
     font-weight: normal;
     font-size: 1.5rem;
-   margin-bottom: 2rem;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
     color: $cube-light-white;
 }
   
 .form-go-to-signup-or-login {
     color: $cube-light-white;
     margin-bottom: 0;
-}
-  
-.form-go-to-signup-or-login a {
-    color: $cube-yellow;
-}
-
-.testuser {
-    text-align: center;
-    padding-top: 1rem;
-}
-  
-// signup 
-.signup-logo-img {
-    text-align: center;
-}
-  
-.signup-title {
-    text-align: center;
-    font-weight: normal;
-    font-size: 1.5rem;
-    margin-bottom: 2rem;
-    color: $cube-light-white;
-}
-  
-.form-control {
-    margin-bottom: 0;
-}
-
-//edit
-.circle-avatar img {
-    margin-bottom: 1rem;
-    width: 7rem;
-    height: 7rem;
-    border-radius: 50%;
-    object-fit: cover;
-}
-
-.user_info h3 {
-    color: $cube-light-white;
-}
-
-
-.card {
-    background-color: $cube-black!important;
-    color: $cube-light-white;
-}
-
-.content {
-    text-align: left;
-    p {
-        font-size: 14px;
+    a {
+        color: $cube-yellow;
     }
-}
-
-.card-extend {
-    margin-top: 2rem;
-}
-
-.edit-form {
-    margin-top: 1rem;
-}
-
-.edit-index {
-    text-align: center;
-    margin-top: 2rem;
-}
-
-.edit-index-title {
-    margin-bottom: 3rem;
-    padding: 1rem;
-}
-
-.edit-index a {
-    color: $cube-light-white;
-}
-
-.edit-group a {
-    border: 0.1rem solid $cube-dark-white;
-    font-size: 1.2rem;
-    padding: 1.5rem;
-    margin-top: 1.5rem;
-}
-
-.list-group-item {
-    background-color: $cube-black!important;
-}
-
-.edit-description {
-    text-align: center;
-}
-
-.home {
-    text-align: center;
-}
-
-.card-deck {
-    margin-bottom: 1rem;
-    text-align: center;
-}
-
-.custom-file-label {
-    text-align: left;
 }

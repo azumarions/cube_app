@@ -1,4 +1,4 @@
-<% if logged_in? %>
+<% if user_signed_in? %>
 <div class="home">
   <div class="container">
     <div class="row">
@@ -56,24 +56,30 @@
           <p>設定</p>
         </div>
       </div>
+      <div class="col-6 col-md-4">
+        <div class="home-icon">
+          <%= link_to '', account_path, class: "fas fa-sign-out-alt fa-4x faa-pulse animated my-white" %>
+          <p>ログアウト</p>
+        </div>
+      </div>
     </div>
   </div>
 </div>
 <% else %>
-<div class="jumbotron jumbotron-fluid jumbotron-extend">
-  <div class="container  discription-container">
-    <h1>R.Cuber</h1>
+  <div class="jumbotron jumbotron-fluid jumbotron-extend">
+    <div class="container  discription-container">
+      <h1>Ruber</h1>
+    </div>
   </div>
-</div>
-<div class="container">
+
   <div class="container discription-container">
     <div class="title">
       <h2>ABOUT.</h2>
     </div>
     <div class="row">
       <div class="col-md-6 about">
-        <h3>R.Cuberとは？</h3>
-        <p>R.Cuberとは,ルービックキューブのためのwebアプリケーションです。</p>
+        <h3>Ruberとは？</h3>
+        <p>Ruberとは,ルービックキューブのためのwebアプリケーションです。</p>
         <p>ルービックキューブ...できるようになりたくないですか？極めたくないですか？</p>
         <h4>2つの目的があります。</h4>
         <p>1.立体パズルの魅力を知り楽しんでもらうこと。</p>
@@ -89,6 +95,7 @@
       </div>
     </div>
   </div>
+
   <div class="container discription-container">
     <div class="title">
       <h2>FEATURE.</h2>
@@ -221,5 +228,4 @@
       </div>
     </div>
   </div>
-</div>
 <% end %>

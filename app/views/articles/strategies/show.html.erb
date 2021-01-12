@@ -1,10 +1,8 @@
 <div class="row">
-  <div class="col-1">
-  </div>
-  <div class="col-10">
+  <div class="col">
     <div class="card-deck">
       <section class="card card-extend border-light">
-        <div class="card-header border-light"><%= @article.title %></div>
+        <div class="card-header border-light card-title"><%= @article.title %></div>
           <div class="card-body">
             <div class="content">
               <p><%= safe_join(@article.content.split("\n"),tag(:br)) %></p>

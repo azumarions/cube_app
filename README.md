@@ -1,8 +1,7 @@
 # 概要
-R.Cuber
-※スマートフォン向けサイトです。
-
-R.Cuberはルービックキューブのためのアプリケーションです。
+Ruber
+* Ruberはルービックキューブのためのアプリケーションです。
+* ※スマートフォン向けサイトです。
 
 ## アプリの目的
 立体パズルの魅力を知り楽しんでもらいたい。
@@ -20,13 +19,12 @@ R.Cuberはルービックキューブのためのアプリケーションです�
 
 # 使用技術・言語
 
-- フロントエンド(HTML/CSS,　HAML, javascript, jQuery, Bootstrap)
+- フロントエンド(HTML/CSS, javascript, jQuery, Bootstrap)
 - バックエンド(Ruby on Rails6)
 - テスト(RSpec, FactoryBot, Capybara)
 - webサーバ(nginx, unicorn)
 - データベース(MySQL)
-- AWS(VPC, EC2, Route53, RDS, S3)
-- コンテナ(Docker)
+- AWS(VPC, EC2, Route53, S3)
 - 開発環境(MacOS, VScode, git, github, bash)
 
 # インフラ構成
@@ -97,4 +95,3 @@ R.Cuberはルービックキューブのためのアプリケーションです�
 - チャットに画像投稿機能を実装する。
 - 記事詳細ページに作成したユーザー情報を表示する。
 - RSpecを手厚く書く(現在約100テスト程)。
-- 全体のリファクタリング。

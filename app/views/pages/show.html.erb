@@ -1,76 +1,56 @@
 <div class="user_info">
   <div class="row">
-    <div class="col-1">
-    </div>
-    <div class="col-10">
+    <div class="col">
       <section class="user_show">
         <div class="row">
           <div class="col-md-1">
           </div>
-          <div class="col-6 col-md-5">
+          <div class="col-5 col-md-3">
             <div class="circle-avatar">
-            <% if current_user.profile.avatar? %>
-              <%= image_tag current_user.profile.avatar.to_s, class: "float-center border mb-2 mx-auto" %>
-            <% else %>
-              <%= image_tag 'no_avatar.png', class: "float-center border mb-2 mx-auto" %> 
-            <% end %>
+              <% if current_user.profile.avatar? %>
+                <%= image_tag current_user.profile.avatar.to_s, class: "float-center border mb-2 mx-auto" %>
+              <% else %>
+                <%= image_tag 'no_avatar.png', class: "float-center border mb-2 mx-auto" %> 
+              <% end %>
             </div>
           </div>
-          <div class="col-6 col-md-6">
+          <div class="col-6 col-md-8">
+            <div class="row">
+              <div class="col-12">
+                <h3 class="text-white"><%= current_user.username %></h3>
+              </div>
+              <div class="col-12">
+                <p class="text-white"><%= link_to '記録を見る', clocks_path %></p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-1">
+          </div>
+          <div class="col-md-5">
             <section class="stats">
               <%= render 'shared/stats' %>
             </section>
-            <%= render 'users/follow_form' if logged_in? %>
+            <%= render 'users/follow_form' if user_signed_in? %>
           </div>
-          <div class="col-md-1">
-          </div>
-          <div class="col-11 col-md-11">
-            <h4 class="text-white"><%= current_user.username %></h4>
-          </div>
-          <div class="col-md-1">
-          </div>
-          <div class="col-11 col-md-8">
-            <% if current_user.profile.description? %>
-              <div class="content">
-                <p><%= safe_join(current_user.profile.description.split("\n"),tag(:br)) %></p>
-              </div>
-            <% end %> 
-          </div>
-        </div>    
+        </div>
       </section>
-
-      <div class="row">  
+      <div class="row">
         <div class="col-md-1">
         </div>
-        <div class="col-6 col-md-5">
-          <p>ベストタイム</p>
-        </div> 
-        <div class="col-6 col-md-6">
-          <% if @clock_feed_items.any? %>
-            <% @clock_feed_items.each do |clock_feed_item| %>
-              <div id="clock-<%= clock_feed_item.id %>" data-article-id="<%= clock_feed_item.id %>">
-                <p><%= clock_feed_item.hour %></p>
-              </div>
-            <% end %>
-          <% else %>
-            <p>まだ記録がありません</p>
+        <div class="col-11 col-md-8">
+          <% if current_user.profile.description? %>
+            <p class="text-white"><%= safe_join(current_user.profile.description.split("\n"),tag(:br)) %></p>
           <% end %>
         </div>
       </div>
-
-      <div class="micropost-page">
-        <div class="col">
-          <h5>投稿</h5>
+      <% if @micropost_feed_items.any? %>
+        <div class="microposts">
+          <%= render @micropost_feed_items %>
         </div>
-        <% if @micropost_feed_items.any? %>
-          <div class="microposts">
-            <%= render @micropost_feed_items %>
-          </div>
-          <%= paginate @micropost_feed_items, params: { controller: :pages, action: :show } %>
-        <% else %>
-          <p>まだ投稿がありません</p>
-        <% end %>
-      </div>
+        <%= paginate @micropost_feed_items, params: { controller: :pages, action: :show } %>
+      <% else %>
+        <p class="text-white">まだ投稿がありません</p>
+      <% end %>
     </div>
   </div>
 </div>

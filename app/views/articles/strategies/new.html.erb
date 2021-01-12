@@ -1,28 +1,29 @@
-<div class="card-deck">
+<div class="row">
   <div class="col">
-    <section class="card card-extend border-light">
-      <h2 class="card-header border-light form-title">新規作成</h2>
-        <div class="card-body">
-          <%= form_with(model: @article, url: article_strategies_path, local: true) do |f| %>
-            <div class="form-group">
-              <%= f.text_area :title, autofocus: true, class: 'form-control article-title', placeholder: "タイトル" %>
-            </div>
-            <div class="form-group">
-              <%= f.text_area :content, class: 'form-control article-content', placeholder: "コンテンツ" %>
-            </div>
-            <div class="edit-form">
-              <div class="row">
-                <div class="col-6  btn-ar">
-                  <%= link_to 'キャンセル' , article_path, class: "btn btn-light form-control" %>
-                </div>   
-                <div class="col-6  btn-ar">
-                  <%= f.submit "作成する", class: "btn btn-info form-control" %>
+    <div class="card-deck">
+      <section class="card card-extend border-light">
+        <div class="card-header border-light card-title">新規作成</div>
+          <div class="card-body">
+            <%= form_with(model: @article, url: article_strategies_path, local: true) do |f| %>
+              <div class="form-group">
+                <%= f.text_area :title, autofocus: true, class: 'form-control article-title', placeholder: "タイトル" %>
+              </div>
+              <div class="form-group">
+                <%= f.text_area :content, class: 'form-control article-content', placeholder: "コンテンツ" %>
+              </div>
+              <div class="submit_form">
+                <div class="row">
+                  <div class="col-6  btn-ar">
+                    <%= link_to 'キャンセル' , article_path, class: "btn btn-light form-control" %>
+                  </div>
+                  <div class="col-6  btn-ar">
+                    <%= f.submit "作成する", class: "btn btn-info form-control" %>
+                  </div>
                 </div>
-              </div>       
-            </div>
-          <% end %>
-        </div>   
-    </section>
+              </div>
+            <% end %>
+          </div>
+      </section>
+    </div>
   </div>
 </div>
-  

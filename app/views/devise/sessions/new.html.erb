@@ -1,12 +1,10 @@
-<div class="login">
+<div class="container">
   <div class="row">
-    <div class="col-1">
-    </div>
-    <div class="col-10">
+    <div class="col">
       <div class="form-logo-img">
         <%= link_to image_tag("cube_icon.png", width: 90), root_path, class: "logo-img" %>
       </div>
-    　<h1 class="form-title">ログイン</h1>
+      <div class="form-title">ログイン</div>
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
         <div class="form-group">

@@ -1,27 +1,29 @@
-<div class="card-deck">
+<div class="row">
   <div class="col">
-    <section class="card card-extend border-light">
-      <h2 class="card-header border-light form-title">記事編集</h2>
-        <div class="card-body">
-          <%= form_with(model: @article, url: article_strategy_path, method: :put, local: true) do |f| %>
-            <div class="form-group">
-              <%= f.text_area :title, autofocus: true, class: 'form-control article-title', placeholder: "@article.title" %>
-            </div>
-            <div class="form-group">
-              <%= f.text_area :content, class: 'form-control article-content', placeholder: "@article.content" %>
-            </div>
-            <div class="edit-form">
-              <div class="row">
-                <div class="col-6  btn-ar">
-                  <%= link_to "削除", article_strategy_path, method: :delete, data: { confirm: "削除しますか？" }, class: "btn btn-danger form-control" %>
-                </div>   
-                <div class="col-6  btn-ar">
-                  <%= f.submit "保存する", class: "btn btn-info form-control" %> 
-                </div>        
-              </div>    
-            </div>        
-          <% end %>
-        </div>   
-    </section>     
+    <div class="card-deck">
+      <section class="card card-extend border-light">
+        <div class="card-header border-light card-title">記事編集</div>
+          <div class="card-body">
+            <%= form_with(model: @article, url: article_strategy_path, method: :put, local: true) do |f| %>
+              <div class="form-group">
+                <%= f.text_area :title, autofocus: true, class: 'form-control article-title', placeholder: "@article.title" %>
+              </div>
+              <div class="form-group">
+                <%= f.text_area :content, class: 'form-control article-content', placeholder: "@article.content" %>
+              </div>
+              <div class="submit_form">
+                <div class="row">
+                  <div class="col-6  btn-ar">
+                    <%= link_to "削除", article_strategy_path, method: :delete, data: { confirm: "削除しますか？" }, class: "btn btn-danger form-control" %>
+                  </div>
+                  <div class="col-6  btn-ar">
+                    <%= f.submit "保存する", class: "btn btn-info form-control" %>
+                  </div>
+                </div>
+              </div>
+            <% end %>
+          </div>
+      </section>
+    </div>
   </div>
 </div>
