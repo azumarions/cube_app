@@ -35,16 +35,17 @@ gem 'bootsnap', '>= 1.4.2', require: false
 group :development, :test do
   gem 'rspec-rails'
   gem 'factory_bot_rails'
-  gem 'capistrano'
-  gem 'capistrano-bundler'
-  gem 'capistrano-rails'
-  gem 'capistrano-rbenv'
   gem 'ed25519'
   gem 'bcrypt_pbkdf'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
 
 group :development do
+  gem 'capistrano'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rails'
+  gem 'capistrano-rbenv'
+  gem 'capistrano3-unicorn'
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '~> 3.2'
   gem 'spring'
