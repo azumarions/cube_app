@@ -39,13 +39,6 @@ set :keep_releases, 5
 # Uncomment the following to require manually verifying the host key before first deploy.
 # set :ssh_options, verify_host_key: :secure
 namespace :deploy do
-    desc 'Restart application'
-    task :restart do
-      on roles(:app) do
-        invoke 'unicorn:restart'
-      end
-    end
-  
     desc 'Create database'
     task :db_create do
       on roles(:db) do |host|
