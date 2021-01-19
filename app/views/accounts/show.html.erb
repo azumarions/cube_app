@@ -2,8 +2,9 @@
   <div class="row">
     <div class="col">           
       <ul class="list-group">
+      <% if @guest_user.id != current_user.id %>
         <div class="account-group">
-          <%= link_to 'プロフィール画像設定', edit_account_avatar_path, class: "list-group-item list-group-item-action" %>          
+          <%= link_to 'プロフィール画像設定', edit_account_avatar_path, class: "list-group-item list-group-item-action" %>
         </div>
         <div class="account-group">
           <%= link_to 'アカウント設定', edit_user_registration_path, class: "list-group-item list-group-item-action" %>
@@ -11,6 +12,13 @@
         <div class="account-group">
           <%= link_to 'メッセージ設定', edit_account_description_path, class: "list-group-item list-group-item-action" %>
         </div>
+      <% else %>
+        <div class="guest_user">
+          <h5 class="gu_edit">ゲストユーザーは設定を</h5>
+          <h5 class="gu_edit">変更できません</h5>
+          <div class="gu-btn"><%= link_to '戻る', root_path, class: "btn btn-light form-control" %></div>
+        </div>
+      <% end %>
       </ul>
     </div>
   </div>

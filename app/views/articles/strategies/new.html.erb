@@ -5,6 +5,7 @@
         <div class="card-header border-light card-title">新規作成</div>
           <div class="card-body">
             <%= form_with(model: @article, url: article_strategies_path, local: true) do |f| %>
+              <%= render 'shared/error_messages', object: f.object %>
               <div class="form-group">
                 <%= f.text_area :title, autofocus: true, class: 'form-control article-title', placeholder: "タイトル" %>
               </div>

@@ -1,6 +1,10 @@
 class MicropostsController < ApplicationController
-  before_action :sign_in_required, only: [:create, :show, :index, :destroy]
+  before_action :sign_in_required, only: [:new, :create, :show, :index, :destroy]
   before_action :correct_user,   only: :destroy
+
+  def new
+    @micropost = Micropost.new
+  end
 
   def create
     @micropost = current_user.microposts.build(micropost_params)
@@ -8,7 +12,7 @@ class MicropostsController < ApplicationController
       flash[:success] = "投稿完了!"
       redirect_to microposts_path
     else
-      redirect_to microposts_path
+      render new_micropost_path
     end
   end
 

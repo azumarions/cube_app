@@ -5,6 +5,7 @@
         <div class="card-header border-light card-title">記事編集</div>
           <div class="card-body">
             <%= form_with(model: @article, url: article_strategy_path, method: :put, local: true) do |f| %>
+              <%= render 'shared/error_messages', object: f.object %>
               <div class="form-group">
                 <%= f.text_area :title, autofocus: true, class: 'form-control article-title', placeholder: "@article.title" %>
               </div>

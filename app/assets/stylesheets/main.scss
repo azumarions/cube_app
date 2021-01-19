@@ -94,6 +94,11 @@ body {
 }
 
 // button
+.btn-lg {
+    width: 12rem;
+    margin: 1rem;
+}
+
 .btn-extend {
     width: 5rem;
 }
@@ -104,6 +109,10 @@ body {
 
 .btn-ar {
     padding: 0.2rem!important;
+}
+
+.btn-link {
+    color: white!important;
 }
 
 .form-submit {
@@ -118,7 +127,7 @@ body {
 }
 
 .search-name {
-    padding: 0.3rem 0 0.5rem 0;
+    padding: 0.3rem 0 0.5rem 0.5rem;
     border-radius: 5%;
 }
 

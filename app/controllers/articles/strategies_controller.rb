@@ -1,6 +1,5 @@
 class Articles::StrategiesController < ApplicationController
-  before_action :sign_in_required
-  before_action :authenticate_user!
+  before_action :sign_in_required, only: [:new, :create, :show, :index, :edit, :update, :destroy]
   before_action :correct_user,   only: :destroy
 
   def new
@@ -14,7 +13,7 @@ class Articles::StrategiesController < ApplicationController
       redirect_to article_strategies_path
     else
       @feed_items = current_user.feed.page(params[:page]).per(20)
-      redirect_to article_path
+      render template: "articles/strategies/new"
     end
   end
 
@@ -44,14 +43,14 @@ class Articles::StrategiesController < ApplicationController
       flash[:success] = "編集が完了しました"
       redirect_to articles_index_path
     else
-      render article_path
+      render template: "articles/strategies/edit"
     end
   end
 
   def destroy
     @article.destroy
     flash[:success] = "記事を削除しました"
-    redirect_to request.referrer || root_url
+    redirect_to article_path
   end
 
   private

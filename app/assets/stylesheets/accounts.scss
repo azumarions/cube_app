@@ -26,3 +26,14 @@ $cube-dark-blue: #0c2e64;
     border-radius: 50%;
     object-fit: cover;
 }
+
+.guest_user {
+    padding: 2rem;
+    .gu_edit {
+        color: #b1046b;
+        text-align: center;
+    }
+    .gu-btn {
+        padding: 1rem;
+    }
+}
