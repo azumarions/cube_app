@@ -18,9 +18,10 @@
               </div>
             </li>
           </div> 
-        </div>  
-      </div>               　        
-    <% end %>   　
+        </div> 
+      </div>
+    <% end %>
+    <%= paginate @clock_feed_items, params: { controller: :clocks, action: :index } %>
   </ul>
 <% else %>
   <h5 class="no-data">まだ記録がありません</h5>
